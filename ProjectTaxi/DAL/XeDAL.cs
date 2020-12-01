@@ -13,11 +13,37 @@ namespace ProjectTaxi.DAL
     class XeDAL
     {
 
-        SqlConnection connection = new SqlConnection(DBConnection.DbConn);
+        static SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+        public List<XeBLL> GetxeBLLs()
+        {
+            List<XeBLL> list = new List<XeBLL>();
 
-        #region Select Data
-        public DataTable SelectData()
+            string queryString =
+                    "select  * from  HAI_XE;";
+
+            {
+                SqlCommand command = new SqlCommand( queryString, connection);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        XeBLL XE = new XeBLL();
+                        XE.ID_XE = reader[0].ToString();
+                        XE.SO_XE = reader[2].ToString();
+
+                        list.Add(XE);
+                    }
+                }
+            }
+            return list;
+        }
+
+            
+
+            #region Select Data
+            public DataTable SelectData()
         {
             DataTable table = new DataTable();
             try

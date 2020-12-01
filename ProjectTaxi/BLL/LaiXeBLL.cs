@@ -13,5 +13,8 @@ namespace ProjectTaxi.BLL
         public string SO_DAM { get; set; }
         public string ID_XE { get; set; }
         public string ID_CN { get; set; }
+
+
+        
     }
 }

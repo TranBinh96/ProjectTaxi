@@ -12,8 +12,37 @@ namespace ProjectTaxi.DAL
 {
     class ChiNhanhDAL
     {
-        SqlConnection connection = new SqlConnection(DBConnection.DbConn);
+        static SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+
+
+        public  List<ChiNhanhBLL> GetChiNhanhBLLs()
+        {
+            List<ChiNhanhBLL> list = new List<ChiNhanhBLL>();
+
+            string queryString =
+                    "select  * from  HAI_CHINHANH;";
+           
+            {
+                SqlCommand command = new SqlCommand(
+                    queryString, connection);
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        ChiNhanhBLL chiNhanh = new ChiNhanhBLL();
+                        chiNhanh.ID_CN = reader[0].ToString();
+                        chiNhanh.TENCN = reader[1].ToString();
+                        chiNhanh.DIACHI = reader[2].ToString();
+
+                        list.Add(chiNhanh);
+                    }
+                }
+            }
+
+            return list;
+        }
 
         #region Select Data
         public DataTable SelectData()

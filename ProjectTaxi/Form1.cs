@@ -60,6 +60,24 @@ namespace ProjectTaxi
         DoanhThuBLL doanhThuBLL = new DoanhThuBLL();
         DoanhThuDAL doanhThuDAL = new DoanhThuDAL();
 
+        List<ChiNhanhBLL> list_CN = new List<ChiNhanhBLL>();
+        List<XeBLL> list_Xe = new List<XeBLL>();
+
+        public void Load_Data_1()
+        {
+            list_CN = chiNhanhDAL.GetChiNhanhBLLs();
+            cmbChiNhanh_LX.DataSource = list_CN;
+            cmbChiNhanh_LX.DisplayMember = "TENCN";
+            cmbChiNhanh_LX.ValueMember = "ID_CN";
+            cmbChiNhanh_LX.SelectedIndex = -1;
+
+            list_Xe = XeDAL.GetxeBLLs();
+            cmbMaXe_LX.DataSource = list_Xe;
+            cmbMaXe_LX.DisplayMember = "SO_XE";
+            cmbMaXe_LX.ValueMember = "ID_XE";
+            cmbMaXe_LX.SelectedIndex = -1;
+        }
+
         private void Form1_Load(object sender, EventArgs e)
         {
             gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
@@ -67,9 +85,7 @@ namespace ProjectTaxi
             gridLaiXe.DataSource = LaiXeDAL.SelectData();
             gridXe.DataSource = XeDAL.SelectData();
             gridDoanhThu.DataSource = doanhThuDAL.SelectData();
-
-
-
+            Load_Data_1();
 
         }
         #region Chi Nhanh
@@ -84,7 +100,7 @@ namespace ProjectTaxi
                 if (chiNhanhDAL.InsertData(chiNhanhBLL))
                 {
                     MessageBox.Show("Thêm Chi Nhánh Thành Công");
-                    gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
+                    gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();                
                     Clean();
 
 
@@ -112,8 +128,8 @@ namespace ProjectTaxi
             txtMaLaiXe.Text = "";
             txt_TenLX.Text = "";
             txtSoDam.Text = "";
-            txtChiNhanh_LX.Text = "";
-            txtMaXe_LX.Text = "";
+            cmbChiNhanh_LX.Text = "";
+            cmbMaXe_LX.Text = "";
             txtMaXe_X.Text = "";
             txtLoaiXe_X.Text = "";
             txt_SoXe_X.Text = "";
@@ -141,6 +157,7 @@ namespace ProjectTaxi
                 {
                     MessageBox.Show("Cập Nhật Chi Nhánh Thành Công");
                     gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
+                    Load_Data_1();
                     Clean();
                 }
                 else
@@ -159,8 +176,6 @@ namespace ProjectTaxi
             DataRow row = gridChiNhanh.GetDataRow(gridChiNhanh.GetSelectedRows()[0]);
             if (row == null || row[0].ToString() == "")
                 return;
-
-
             txtID_CN.Text = row[0].ToString();
             txt_Name_CN.Text = row[1].ToString();
             txt_DiaChi_CN.Text = row[2].ToString();
@@ -249,6 +264,7 @@ namespace ProjectTaxi
                     {
                         MessageBox.Show("Xóa Chi Nhánh Thành Công");
                         gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
+                        Load_Data_1();
                         Clean();
                     }
                 }       
@@ -266,8 +282,8 @@ namespace ProjectTaxi
                 LaiXeBLL.ID_LX = txtMaLaiXe.Text;
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
-                LaiXeBLL.ID_XE = txtMaXe_LX.Text;
-                LaiXeBLL.ID_CN = txtChiNhanh_LX.Text;
+                LaiXeBLL.ID_XE = cmbMaXe_LX.Text;
+                LaiXeBLL.ID_CN = cmbChiNhanh_LX.Text;
                 if (LaiXeDAL.InsertData(LaiXeBLL))
                 {
                     MessageBox.Show("Thêm Lái Xe Thành Công");
@@ -291,8 +307,8 @@ namespace ProjectTaxi
                 LaiXeBLL.ID_LX = txtMaLaiXe.Text;
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
-                LaiXeBLL.ID_XE = txtMaXe_LX.Text;
-                LaiXeBLL.ID_CN = txtChiNhanh_LX.Text;
+                LaiXeBLL.ID_XE = cmbMaXe_LX.Text;
+                LaiXeBLL.ID_CN = cmbChiNhanh_LX.Text;
                 if (LaiXeDAL.UpateData(LaiXeBLL))
                 {
                     MessageBox.Show("Cập Nhật Xe Thành Công");
@@ -340,8 +356,8 @@ namespace ProjectTaxi
             txtMaLaiXe.Text = row[0].ToString();
             txt_TenLX.Text = row[1].ToString();
             txtSoDam.Text = row[2].ToString();
-            txtMaXe_LX.Text = row[3].ToString();
-            txtChiNhanh_LX.Text = row[4].ToString();
+            cmbMaXe_LX.Text = row[3].ToString();
+            cmbChiNhanh_LX.Text = row[4].ToString();
         }
 
         private void btn_Clean_Click(object sender, EventArgs e)
@@ -564,6 +580,13 @@ namespace ProjectTaxi
         {
             int barItemIndex = barSubItemNavigation.ItemLinks.IndexOf(e.Link);
             navBarControl.ActiveGroup = navBarControl.Groups[barItemIndex];
+        }
+
+
+        private void cmbChiNhanh_LX_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            
+           
         }
     }
 }
