@@ -31,8 +31,8 @@ namespace ProjectTaxi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -44,17 +44,20 @@ namespace ProjectTaxi
             this.barButtonItemDoanhThu = new DevExpress.XtraBars.BarButtonItem();
             this.skinDropDownButtonItem = new DevExpress.XtraBars.SkinDropDownButtonItem();
             this.skinPaletteRibbonGalleryBarItem = new DevExpress.XtraBars.SkinPaletteRibbonGalleryBarItem();
+            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroupNavigation = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
             this.officeNavigationBar = new DevExpress.XtraBars.Navigation.OfficeNavigationBar();
             this.navBarControl = new DevExpress.XtraNavBar.NavBarControl();
-            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
             this.employeesNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.customersNavBarGroup = new DevExpress.XtraNavBar.NavBarGroup();
             this.navBarGroup1 = new DevExpress.XtraNavBar.NavBarGroup();
-            this.navBarGroup2 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup3 = new DevExpress.XtraNavBar.NavBarGroup();
+            this.navBarGroup4 = new DevExpress.XtraNavBar.NavBarGroup();
             this.navigationFrame = new DevExpress.XtraBars.Navigation.NavigationFrame();
             this.employeesNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
@@ -138,6 +141,7 @@ namespace ProjectTaxi
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
+            this.btnDelete_X = new DevExpress.XtraEditors.SimpleButton();
             this.gridXe = new DevExpress.XtraGrid.GridControl();
             this.gridViewXe = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtMaXe_X = new DevExpress.XtraEditors.TextEdit();
@@ -164,8 +168,11 @@ namespace ProjectTaxi
             this.layoutControlItem40 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem36 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.txtDelete_X = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtNgayNop_DT = new System.Windows.Forms.DateTimePicker();
+            this.btn_Xoa_DT = new DevExpress.XtraEditors.SimpleButton();
             this.gridDoanhThu = new DevExpress.XtraGrid.GridControl();
             this.gridViewDoanhThu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtMaDoanhThu_DT = new DevExpress.XtraEditors.TextEdit();
@@ -180,7 +187,6 @@ namespace ProjectTaxi
             this.layoutControlGroup8 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlGroup9 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -192,14 +198,13 @@ namespace ProjectTaxi
             this.emptySpaceItem10 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem11 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem12 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.btnDelete_X = new DevExpress.XtraEditors.SimpleButton();
-            this.txtDelete_X = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.barButtonItem1 = new DevExpress.XtraBars.BarButtonItem();
-            this.btn_Xoa_DT = new DevExpress.XtraEditors.SimpleButton();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.dateTimeOffsetEdit1 = new DevExpress.XtraEditors.DateTimeOffsetEdit();
-            this.txtNgayNop_DT = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.barButtonItem2 = new DevExpress.XtraBars.BarButtonItem();
+            this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
@@ -301,6 +306,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).BeginInit();
             this.navigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
             this.layoutControl5.SuspendLayout();
@@ -315,7 +321,6 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
@@ -327,10 +332,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayNop_DT)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
+            this.navigationPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -348,9 +355,10 @@ namespace ProjectTaxi
             this.barButtonItemLaiXe,
             this.barButtonItemXe,
             this.barButtonItemDoanhThu,
-            this.barButtonItem1});
+            this.barButtonItem1,
+            this.barButtonItem2});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 50;
+            this.ribbonControl.MaxItemId = 51;
             this.ribbonControl.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -376,7 +384,8 @@ namespace ProjectTaxi
             new DevExpress.XtraBars.LinkPersistInfo(this.customersBarButtonItem),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemLaiXe),
             new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemXe),
-            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemDoanhThu)});
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItemDoanhThu),
+            new DevExpress.XtraBars.LinkPersistInfo(this.barButtonItem2)});
             this.barSubItemNavigation.Name = "barSubItemNavigation";
             // 
             // employeesBarButtonItem
@@ -430,6 +439,14 @@ namespace ProjectTaxi
             this.skinPaletteRibbonGalleryBarItem.Id = 47;
             this.skinPaletteRibbonGalleryBarItem.Name = "skinPaletteRibbonGalleryBarItem";
             // 
+            // barButtonItem1
+            // 
+            this.barButtonItem1.Caption = "Báo Cáo";
+            this.barButtonItem1.Id = 49;
+            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.barButtonItem1.Name = "barButtonItem1";
+            // 
             // ribbonPage
             // 
             this.ribbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -453,6 +470,12 @@ namespace ProjectTaxi
             this.ribbonPageGroup.ItemLinks.Add(this.skinPaletteRibbonGalleryBarItem);
             this.ribbonPageGroup.Name = "ribbonPageGroup";
             this.ribbonPageGroup.Text = "Giao Diện";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.Text = "Thống Kê";
             // 
             // ribbonStatusBar
             // 
@@ -480,7 +503,8 @@ namespace ProjectTaxi
             this.customersNavBarGroup,
             this.navBarGroup1,
             this.navBarGroup2,
-            this.navBarGroup3});
+            this.navBarGroup3,
+            this.navBarGroup4});
             this.navBarControl.Location = new System.Drawing.Point(0, 158);
             this.navBarControl.Name = "navBarControl";
             this.navBarControl.OptionsNavPane.ExpandedWidth = 165;
@@ -490,15 +514,12 @@ namespace ProjectTaxi
             this.navBarControl.Text = "navBarControl";
             this.navBarControl.ActiveGroupChanged += new DevExpress.XtraNavBar.NavBarGroupEventHandler(this.navBarControl_ActiveGroupChanged);
             // 
-            // navBarGroup3
+            // navBarGroup2
             // 
-            this.navBarGroup3.Caption = "Doanh Thu";
-            this.navBarGroup3.Expanded = true;
-            this.navBarGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarGroup3.ImageOptions.SvgImage")));
-            this.navBarGroup3.Name = "navBarGroup3";
-            toolTipItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            superToolTip2.Items.Add(toolTipItem2);
-            this.navBarGroup3.SuperTip = superToolTip2;
+            this.navBarGroup2.Caption = "Xe";
+            this.navBarGroup2.Expanded = true;
+            this.navBarGroup2.ImageOptions.SmallImage = global::ProjectTaxi.Properties.Resources.sedan_car_front;
+            this.navBarGroup2.Name = "navBarGroup2";
             // 
             // employeesNavBarGroup
             // 
@@ -508,7 +529,7 @@ namespace ProjectTaxi
             // 
             // customersNavBarGroup
             // 
-            this.customersNavBarGroup.Caption = "Mục";
+            this.customersNavBarGroup.Caption = "Mức";
             this.customersNavBarGroup.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("customersNavBarGroup.ImageOptions.SvgImage")));
             this.customersNavBarGroup.Name = "customersNavBarGroup";
             // 
@@ -518,12 +539,22 @@ namespace ProjectTaxi
             this.navBarGroup1.ImageOptions.SmallImage = global::ProjectTaxi.Properties.Resources.driver__1_;
             this.navBarGroup1.Name = "navBarGroup1";
             // 
-            // navBarGroup2
+            // navBarGroup3
             // 
-            this.navBarGroup2.Caption = "Xe";
-            this.navBarGroup2.Expanded = true;
-            this.navBarGroup2.ImageOptions.SmallImage = global::ProjectTaxi.Properties.Resources.sedan_car_front;
-            this.navBarGroup2.Name = "navBarGroup2";
+            this.navBarGroup3.Caption = "Doanh Thu";
+            this.navBarGroup3.Expanded = true;
+            this.navBarGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarGroup3.ImageOptions.SvgImage")));
+            this.navBarGroup3.Name = "navBarGroup3";
+            toolTipItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            superToolTip1.Items.Add(toolTipItem1);
+            this.navBarGroup3.SuperTip = superToolTip1;
+            // 
+            // navBarGroup4
+            // 
+            this.navBarGroup4.Caption = "Lương";
+            this.navBarGroup4.Expanded = true;
+            this.navBarGroup4.ImageOptions.SmallImage = global::ProjectTaxi.Properties.Resources.salary__1_;
+            this.navBarGroup4.Name = "navBarGroup4";
             // 
             // navigationFrame
             // 
@@ -534,6 +565,7 @@ namespace ProjectTaxi
             this.navigationFrame.Controls.Add(this.navigationPage1);
             this.navigationFrame.Controls.Add(this.navigationPage2);
             this.navigationFrame.Controls.Add(this.navigationPage3);
+            this.navigationFrame.Controls.Add(this.navigationPage4);
             this.navigationFrame.Dock = System.Windows.Forms.DockStyle.Fill;
             this.navigationFrame.Location = new System.Drawing.Point(165, 158);
             this.navigationFrame.Name = "navigationFrame";
@@ -542,7 +574,8 @@ namespace ProjectTaxi
             this.customersNavigationPage,
             this.navigationPage1,
             this.navigationPage2,
-            this.navigationPage3});
+            this.navigationPage3,
+            this.navigationPage4});
             this.navigationFrame.RibbonAndBarsMergeStyle = DevExpress.XtraBars.Docking2010.Views.RibbonAndBarsMergeStyle.Always;
             this.navigationFrame.SelectedPage = this.employeesNavigationPage;
             this.navigationFrame.Size = new System.Drawing.Size(625, 371);
@@ -1512,6 +1545,17 @@ namespace ProjectTaxi
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
             // 
+            // btnDelete_X
+            // 
+            this.btnDelete_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_X.ImageOptions.Image")));
+            this.btnDelete_X.Location = new System.Drawing.Point(459, 336);
+            this.btnDelete_X.Name = "btnDelete_X";
+            this.btnDelete_X.Size = new System.Drawing.Size(74, 22);
+            this.btnDelete_X.StyleController = this.layoutControl4;
+            this.btnDelete_X.TabIndex = 9;
+            this.btnDelete_X.Text = "Xóa";
+            this.btnDelete_X.Click += new System.EventHandler(this.btnDelete_X_Click);
+            // 
             // gridXe
             // 
             this.gridXe.Location = new System.Drawing.Point(12, 129);
@@ -1580,7 +1624,7 @@ namespace ProjectTaxi
             // txtSave_X
             // 
             this.txtSave_X.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.txtSave_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton15.ImageOptions.Image")));
+            this.txtSave_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtSave_X.ImageOptions.Image")));
             this.txtSave_X.Location = new System.Drawing.Point(309, 336);
             this.txtSave_X.Name = "txtSave_X";
             this.txtSave_X.Size = new System.Drawing.Size(66, 23);
@@ -1592,7 +1636,7 @@ namespace ProjectTaxi
             // txtUpdate_X
             // 
             this.txtUpdate_X.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.txtUpdate_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton24.ImageOptions.Image")));
+            this.txtUpdate_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtUpdate_X.ImageOptions.Image")));
             this.txtUpdate_X.Location = new System.Drawing.Point(389, 336);
             this.txtUpdate_X.Name = "txtUpdate_X";
             this.txtUpdate_X.Size = new System.Drawing.Size(66, 23);
@@ -1604,7 +1648,7 @@ namespace ProjectTaxi
             // txt_Cancal_Xe
             // 
             this.txt_Cancal_Xe.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.txt_Cancal_Xe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton34.ImageOptions.Image")));
+            this.txt_Cancal_Xe.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txt_Cancal_Xe.ImageOptions.Image")));
             this.txt_Cancal_Xe.Location = new System.Drawing.Point(547, 336);
             this.txt_Cancal_Xe.Name = "txt_Cancal_Xe";
             this.txt_Cancal_Xe.Size = new System.Drawing.Size(66, 23);
@@ -1810,6 +1854,16 @@ namespace ProjectTaxi
             this.layoutControlItem36.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem36.TextSize = new System.Drawing.Size(41, 13);
             // 
+            // txtDelete_X
+            // 
+            this.txtDelete_X.Control = this.btnDelete_X;
+            this.txtDelete_X.Location = new System.Drawing.Point(447, 324);
+            this.txtDelete_X.Name = "txtDelete_X";
+            this.txtDelete_X.Size = new System.Drawing.Size(78, 27);
+            this.txtDelete_X.Text = "Xóa";
+            this.txtDelete_X.TextSize = new System.Drawing.Size(0, 0);
+            this.txtDelete_X.TextVisible = false;
+            // 
             // navigationPage3
             // 
             this.navigationPage3.Controls.Add(this.layoutControl5);
@@ -1818,7 +1872,7 @@ namespace ProjectTaxi
             // 
             // layoutControl5
             // 
-            this.layoutControl5.Controls.Add(this.dateTimeOffsetEdit1);
+            this.layoutControl5.Controls.Add(this.txtNgayNop_DT);
             this.layoutControl5.Controls.Add(this.btn_Xoa_DT);
             this.layoutControl5.Controls.Add(this.gridDoanhThu);
             this.layoutControl5.Controls.Add(this.txtMaDoanhThu_DT);
@@ -1839,6 +1893,25 @@ namespace ProjectTaxi
             this.layoutControl5.TabIndex = 0;
             this.layoutControl5.Text = "layoutControl5";
             // 
+            // txtNgayNop_DT
+            // 
+            this.txtNgayNop_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.txtNgayNop_DT.Location = new System.Drawing.Point(395, 93);
+            this.txtNgayNop_DT.Name = "txtNgayNop_DT";
+            this.txtNgayNop_DT.Size = new System.Drawing.Size(206, 21);
+            this.txtNgayNop_DT.TabIndex = 10;
+            // 
+            // btn_Xoa_DT
+            // 
+            this.btn_Xoa_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa_DT.ImageOptions.Image")));
+            this.btn_Xoa_DT.Location = new System.Drawing.Point(457, 324);
+            this.btn_Xoa_DT.Name = "btn_Xoa_DT";
+            this.btn_Xoa_DT.Size = new System.Drawing.Size(74, 22);
+            this.btn_Xoa_DT.StyleController = this.layoutControl5;
+            this.btn_Xoa_DT.TabIndex = 9;
+            this.btn_Xoa_DT.Text = "Xóa";
+            this.btn_Xoa_DT.Click += new System.EventHandler(this.btn_Xoa_DT_Click);
+            // 
             // gridDoanhThu
             // 
             this.gridDoanhThu.Location = new System.Drawing.Point(24, 141);
@@ -1849,6 +1922,7 @@ namespace ProjectTaxi
             this.gridDoanhThu.TabIndex = 8;
             this.gridDoanhThu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDoanhThu});
+            this.gridDoanhThu.DoubleClick += new System.EventHandler(this.gridDoanhThu_DoubleClick);
             // 
             // gridViewDoanhThu
             // 
@@ -1906,7 +1980,7 @@ namespace ProjectTaxi
             // btnSave_DT
             // 
             this.btnSave_DT.DialogResult = System.Windows.Forms.DialogResult.Yes;
-            this.btnSave_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton14.ImageOptions.Image")));
+            this.btnSave_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnSave_DT.ImageOptions.Image")));
             this.btnSave_DT.Location = new System.Drawing.Point(297, 324);
             this.btnSave_DT.Name = "btnSave_DT";
             this.btnSave_DT.Size = new System.Drawing.Size(66, 23);
@@ -1918,24 +1992,26 @@ namespace ProjectTaxi
             // btn_Update_DT
             // 
             this.btn_Update_DT.DialogResult = System.Windows.Forms.DialogResult.No;
-            this.btn_Update_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton23.ImageOptions.Image")));
+            this.btn_Update_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Update_DT.ImageOptions.Image")));
             this.btn_Update_DT.Location = new System.Drawing.Point(377, 324);
             this.btn_Update_DT.Name = "btn_Update_DT";
             this.btn_Update_DT.Size = new System.Drawing.Size(66, 23);
             this.btn_Update_DT.StyleController = this.layoutControl5;
             this.btn_Update_DT.TabIndex = 5;
             this.btn_Update_DT.Text = "Cập Nhật";
+            this.btn_Update_DT.Click += new System.EventHandler(this.btn_Update_DT_Click);
             // 
             // btnCancel_DT
             // 
             this.btnCancel_DT.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.btnCancel_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton33.ImageOptions.Image")));
+            this.btnCancel_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel_DT.ImageOptions.Image")));
             this.btnCancel_DT.Location = new System.Drawing.Point(535, 324);
             this.btnCancel_DT.Name = "btnCancel_DT";
             this.btnCancel_DT.Size = new System.Drawing.Size(66, 23);
             this.btnCancel_DT.StyleController = this.layoutControl5;
             this.btnCancel_DT.TabIndex = 6;
             this.btnCancel_DT.Text = "Hủy Bỏ";
+            this.btnCancel_DT.Click += new System.EventHandler(this.btnCancel_DT_Click);
             // 
             // layoutControlGroup8
             // 
@@ -1951,7 +2027,6 @@ namespace ProjectTaxi
             // 
             this.layoutControlGroup9.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem23,
-            this.layoutControlItem27,
             this.layoutControlItem29,
             this.layoutControlItem25,
             this.layoutControlItem24,
@@ -1964,7 +2039,8 @@ namespace ProjectTaxi
             this.emptySpaceItem11,
             this.emptySpaceItem12,
             this.layoutControlItem16,
-            this.txtNgayNop_DT});
+            this.layoutControlItem28,
+            this.layoutControlItem27});
             this.layoutControlGroup9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup9.Name = "layoutControlGroup9";
             this.layoutControlGroup9.Size = new System.Drawing.Size(605, 351);
@@ -1981,18 +2057,6 @@ namespace ProjectTaxi
             this.layoutControlItem23.Text = "Mã Doanh Thu";
             this.layoutControlItem23.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem23.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // layoutControlItem27
-            // 
-            this.layoutControlItem27.Control = this.txtTienNop_DT;
-            this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem27.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem27.Name = "layoutControlItem27";
-            this.layoutControlItem27.Size = new System.Drawing.Size(290, 24);
-            this.layoutControlItem27.Text = "Tiền Nộp";
-            this.layoutControlItem27.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem27.TextSize = new System.Drawing.Size(69, 13);
             // 
             // layoutControlItem29
             // 
@@ -2135,51 +2199,6 @@ namespace ProjectTaxi
             this.emptySpaceItem12.Text = "emptySpaceItem1";
             this.emptySpaceItem12.TextSize = new System.Drawing.Size(0, 0);
             // 
-            // btnDelete_X
-            // 
-            this.btnDelete_X.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete_X.ImageOptions.Image")));
-            this.btnDelete_X.Location = new System.Drawing.Point(459, 336);
-            this.btnDelete_X.Name = "btnDelete_X";
-            this.btnDelete_X.Size = new System.Drawing.Size(74, 22);
-            this.btnDelete_X.StyleController = this.layoutControl4;
-            this.btnDelete_X.TabIndex = 9;
-            this.btnDelete_X.Text = "Xóa";
-            this.btnDelete_X.Click += new System.EventHandler(this.btnDelete_X_Click);
-            // 
-            // txtDelete_X
-            // 
-            this.txtDelete_X.Control = this.btnDelete_X;
-            this.txtDelete_X.Location = new System.Drawing.Point(447, 324);
-            this.txtDelete_X.Name = "txtDelete_X";
-            this.txtDelete_X.Size = new System.Drawing.Size(78, 27);
-            this.txtDelete_X.Text = "Xóa";
-            this.txtDelete_X.TextSize = new System.Drawing.Size(0, 0);
-            this.txtDelete_X.TextVisible = false;
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.barButtonItem1);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.Text = "Thống Kê";
-            // 
-            // barButtonItem1
-            // 
-            this.barButtonItem1.Caption = "Báo Cáo";
-            this.barButtonItem1.Id = 49;
-            this.barButtonItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.barButtonItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.barButtonItem1.Name = "barButtonItem1";
-            // 
-            // btn_Xoa_DT
-            // 
-            this.btn_Xoa_DT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btn_Xoa_DT.ImageOptions.Image")));
-            this.btn_Xoa_DT.Location = new System.Drawing.Point(457, 324);
-            this.btn_Xoa_DT.Name = "btn_Xoa_DT";
-            this.btn_Xoa_DT.Size = new System.Drawing.Size(74, 22);
-            this.btn_Xoa_DT.StyleController = this.layoutControl5;
-            this.btn_Xoa_DT.TabIndex = 9;
-            this.btn_Xoa_DT.Text = "Xóa";
-            // 
             // layoutControlItem16
             // 
             this.layoutControlItem16.Control = this.btn_Xoa_DT;
@@ -2189,26 +2208,57 @@ namespace ProjectTaxi
             this.layoutControlItem16.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem16.TextVisible = false;
             // 
-            // dateTimeOffsetEdit1
+            // layoutControlItem28
             // 
-            this.dateTimeOffsetEdit1.EditValue = null;
-            this.dateTimeOffsetEdit1.Location = new System.Drawing.Point(395, 93);
-            this.dateTimeOffsetEdit1.MenuManager = this.ribbonControl;
-            this.dateTimeOffsetEdit1.Name = "dateTimeOffsetEdit1";
-            this.dateTimeOffsetEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateTimeOffsetEdit1.Size = new System.Drawing.Size(206, 20);
-            this.dateTimeOffsetEdit1.StyleController = this.layoutControl5;
-            this.dateTimeOffsetEdit1.TabIndex = 10;
+            this.layoutControlItem28.Control = this.txtNgayNop_DT;
+            this.layoutControlItem28.Location = new System.Drawing.Point(290, 48);
+            this.layoutControlItem28.Name = "layoutControlItem28";
+            this.layoutControlItem28.Size = new System.Drawing.Size(291, 24);
+            this.layoutControlItem28.Text = "Ngày Nộp";
+            this.layoutControlItem28.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // txtNgayNop_DT
+            // layoutControlItem27
             // 
-            this.txtNgayNop_DT.Control = this.dateTimeOffsetEdit1;
-            this.txtNgayNop_DT.Location = new System.Drawing.Point(290, 48);
-            this.txtNgayNop_DT.Name = "txtNgayNop_DT";
-            this.txtNgayNop_DT.Size = new System.Drawing.Size(291, 24);
-            this.txtNgayNop_DT.Text = "Ngày Nộp";
-            this.txtNgayNop_DT.TextSize = new System.Drawing.Size(69, 13);
+            this.layoutControlItem27.Control = this.txtTienNop_DT;
+            this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.layoutControlItem27.CustomizationFormText = "layoutControlItem1";
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem27.Name = "layoutControlItem27";
+            this.layoutControlItem27.Size = new System.Drawing.Size(290, 24);
+            this.layoutControlItem27.Text = "Tiền Nộp";
+            this.layoutControlItem27.TextLocation = DevExpress.Utils.Locations.Left;
+            this.layoutControlItem27.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // barButtonItem2
+            // 
+            this.barButtonItem2.Caption = "Lương";
+            this.barButtonItem2.Id = 50;
+            this.barButtonItem2.ImageOptions.Image = global::ProjectTaxi.Properties.Resources.salary__1_;
+            this.barButtonItem2.Name = "barButtonItem2";
+            this.barButtonItem2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem2_ItemClick);
+            // 
+            // navigationPage4
+            // 
+            this.navigationPage4.Controls.Add(this.gridControl1);
+            this.navigationPage4.Name = "navigationPage4";
+            this.navigationPage4.Size = new System.Drawing.Size(625, 371);
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.MenuManager = this.ribbonControl;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(625, 371);
+            this.gridControl1.TabIndex = 0;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
             // frmMenu
             // 
@@ -2327,6 +2377,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).EndInit();
             this.navigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
             this.layoutControl5.ResumeLayout(false);
@@ -2341,7 +2392,6 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
@@ -2353,10 +2403,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dateTimeOffsetEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtNgayNop_DT)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
+            this.navigationPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2528,7 +2580,12 @@ namespace ProjectTaxi
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraEditors.SimpleButton btn_Xoa_DT;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
-        private DevExpress.XtraEditors.DateTimeOffsetEdit dateTimeOffsetEdit1;
-        private DevExpress.XtraLayout.LayoutControlItem txtNgayNop_DT;
+        private System.Windows.Forms.DateTimePicker txtNgayNop_DT;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem28;
+        private DevExpress.XtraNavBar.NavBarGroup navBarGroup4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem2;
+        private DevExpress.XtraBars.Navigation.NavigationPage navigationPage4;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

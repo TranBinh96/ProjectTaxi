@@ -48,7 +48,7 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "INSERT INTO HAI_DOANHTHU(ID_DOANH_THU, ID_LAIXE, ID_MUC, ID_CN, TIEN_NOP, NGAY_NOP, TIEN_THUONG) VALUE(@ID_DOANH_THU, @ID_LAIXE, @ID_MUC, @ID_CN, @TIEN_NOP,@NGAY_NOP, @TIEN_THUONG) ";
+                string sql = "INSERT INTO HAI_DOANHTHU(ID_DOANH_THU, ID_LAIXE, ID_MUC, ID_CN, TIEN_NOP, NGAY_NOP, TIEN_THUONG) VALUES (@ID_DOANH_THU, @ID_LAIXE, @ID_MUC, @ID_CN, @TIEN_NOP,@NGAY_NOP, @TIEN_THUONG) ";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_DOANH_THU", doanhThu.MA_DOANH_THU);

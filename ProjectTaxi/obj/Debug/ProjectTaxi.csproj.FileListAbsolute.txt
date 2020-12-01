@@ -100,3 +100,17 @@ C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.csproj.CopyC
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.exe
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.pdb
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.frmMenu.resources
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.Desktop.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.xml
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.xml
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\DevExpress.XtraScheduler.v20.2.Core.Desktop.xml
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\de\DevExpress.XtraScheduler.v20.2.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\es\DevExpress.XtraScheduler.v20.2.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ja\DevExpress.XtraScheduler.v20.2.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ru\DevExpress.XtraScheduler.v20.2.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\de\DevExpress.XtraScheduler.v20.2.Core.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\es\DevExpress.XtraScheduler.v20.2.Core.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ja\DevExpress.XtraScheduler.v20.2.Core.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ru\DevExpress.XtraScheduler.v20.2.Core.resources.dll

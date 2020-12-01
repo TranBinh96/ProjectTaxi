@@ -120,6 +120,13 @@ namespace ProjectTaxi
             txt_SoLai_X.Text = "";
             txt_MucDat_X.Text = "";
             txt_ID_Muc_M.Text = "";
+            txtMaDoanhThu_DT.Text = "";
+            txt_LaiXe_DT.Text = "";
+            txt_Muc_DT.Text = "";
+            txt_ChiNhanh_DT.Text = "";
+            txtTienNop_DT.Text = "";
+            txtNgayNop_DT.Value = DateTime.Now;
+            txt_TienThuong_DT.Text = "";
 
         }
 
@@ -453,24 +460,110 @@ namespace ProjectTaxi
                 doanhThuBLL.ID_MUC = txt_Muc_DT.Text;
                 doanhThuBLL.ID_CHI_NHANH = txt_ChiNhanh_DT.Text;
                 doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
-              // doanhThuBLL.NGAY_NOP = DateTime.Parse(txtNgayNop_DT.Text);
+                doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
                 doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
                 if (doanhThuDAL.InsertData(doanhThuBLL))
                 {
                     MessageBox.Show("Thêm Doanh Thu Thành Công");
-                    gridXe.DataSource = XeDAL.SelectData();
+                    gridDoanhThu.DataSource = doanhThuDAL.SelectData();
                     Clean();
                 }
 
                 else
                 {
                     MessageBox.Show("Thêm  Doanh Thu Thất Bại");
-                }
+                } 
             }
             else
             {
                 MessageBox.Show("Vui Long Nhập Mã Doanh thu");
             }
+        }
+
+        private void btn_Update_DT_Click(object sender, EventArgs e)
+        {
+            if (txtMaDoanhThu_DT.Text != "")
+            {
+                doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
+                doanhThuBLL.ID_LAI_XE = txt_LaiXe_DT.Text;
+                doanhThuBLL.ID_MUC = txt_Muc_DT.Text;
+                doanhThuBLL.ID_CHI_NHANH = txt_ChiNhanh_DT.Text;
+                doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
+                doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
+                doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
+                if (doanhThuDAL.UpateData(doanhThuBLL))
+                {
+                    MessageBox.Show("Cập Nhật Doanh Thu Thành Công");
+                    gridDoanhThu.DataSource = doanhThuDAL.SelectData();
+                    Clean();
+                }
+
+                else
+                {
+                    MessageBox.Show("Cập Nhật  Doanh Thu Thất Bại");
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Vui Long Nhập Mã Doanh thu");
+            }
+        }
+
+        private void gridDoanhThu_DoubleClick(object sender, EventArgs e)
+        {
+            DataRow row = gridViewDoanhThu.GetDataRow(gridViewDoanhThu.GetSelectedRows()[0]);
+            if (row == null || row[0].ToString() == "")
+                return;
+
+            txtMaDoanhThu_DT.Text = row[0].ToString();
+            txt_LaiXe_DT.Text = row[1].ToString();
+            txt_Muc_DT.Text = row[2].ToString();
+            txt_ChiNhanh_DT.Text = row[3].ToString();
+            txtTienNop_DT.Text = row[4].ToString();
+            txtNgayNop_DT.Text = row[5].ToString();
+            txt_TienThuong_DT.Text = row[6].ToString();
+        }
+
+        private void btn_Xoa_DT_Click(object sender, EventArgs e)
+        {
+            if (txtMaDoanhThu_DT.Text != "")
+            {
+                doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
+                string name = txtMaDoanhThu_DT.Text;
+                DialogResult dlr = MessageBox.Show("Bạn muốn Xóa " + name + "  ?",
+               "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dlr == DialogResult.Yes)
+                {
+                    if (doanhThuDAL.DeleteData(doanhThuBLL))
+                    {
+                        MessageBox.Show("Xóa Doanh Thu Thành Công");
+                        gridDoanhThu.DataSource = doanhThuDAL.SelectData();
+                        Clean();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Xóa  Doanh Thu Thất Bại");
+                    }
+                }              
+            }
+            else
+            {
+                MessageBox.Show("Vui Long Nhập Mã Doanh thu");
+            }
+        }
+
+        private void btnCancel_DT_Click(object sender, EventArgs e)
+        {
+            Clean();
+        }
+
+        private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int barItemIndex = barSubItemNavigation.ItemLinks.IndexOf(e.Link);
+            navBarControl.ActiveGroup = navBarControl.Groups[barItemIndex];
         }
     }
 }
