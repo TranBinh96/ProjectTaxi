@@ -35,7 +35,6 @@ namespace ProjectTaxi.DAL
                         chiNhanh.ID_CN = reader[0].ToString();
                         chiNhanh.TENCN = reader[1].ToString();
                         chiNhanh.DIACHI = reader[2].ToString();
-
                         list.Add(chiNhanh);
                     }
                 }

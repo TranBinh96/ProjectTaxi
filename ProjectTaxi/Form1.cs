@@ -62,12 +62,22 @@ namespace ProjectTaxi
 
         List<ChiNhanhBLL> list_CN = new List<ChiNhanhBLL>();
         List<XeBLL> list_Xe = new List<XeBLL>();
+        List<MucBLL> list_Muc = new List<MucBLL>();
 
-        public void Load_Data_1()
+        
+
+        private void Form1_Load(object sender, EventArgs e)
         {
+            
+            gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
+            gridMuc.DataSource = mucDAL.SelectData();
+            gridLaiXe.DataSource = LaiXeDAL.SelectData();
+            gridXe.DataSource = XeDAL.SelectData();
+            gridDoanhThu.DataSource = doanhThuDAL.SelectData();
+
             list_CN = chiNhanhDAL.GetChiNhanhBLLs();
             cmbChiNhanh_LX.DataSource = list_CN;
-            cmbChiNhanh_LX.DisplayMember = "TENCN";
+            cmbChiNhanh_LX.DisplayMember = "DIACHI";
             cmbChiNhanh_LX.ValueMember = "ID_CN";
             cmbChiNhanh_LX.SelectedIndex = -1;
 
@@ -76,16 +86,12 @@ namespace ProjectTaxi
             cmbMaXe_LX.DisplayMember = "SO_XE";
             cmbMaXe_LX.ValueMember = "ID_XE";
             cmbMaXe_LX.SelectedIndex = -1;
-        }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
-            gridMuc.DataSource = mucDAL.SelectData();
-            gridLaiXe.DataSource = LaiXeDAL.SelectData();
-            gridXe.DataSource = XeDAL.SelectData();
-            gridDoanhThu.DataSource = doanhThuDAL.SelectData();
-            Load_Data_1();
+            list_Muc=mucDAL.GetMUCBLLs();
+            cmb_MaMuc_X.DataSource = list_Muc;
+            cmb_MaMuc_X.DisplayMember = "MUC";
+            cmb_MaMuc_X.ValueMember = "ID_MUC";
+            cmb_MaMuc_X.SelectedIndex = -1;
 
         }
         #region Chi Nhanh
@@ -102,8 +108,6 @@ namespace ProjectTaxi
                     MessageBox.Show("Thêm Chi Nhánh Thành Công");
                     gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();                
                     Clean();
-
-
                 }
             }
             else
@@ -156,8 +160,7 @@ namespace ProjectTaxi
                 if (chiNhanhDAL.UpateData(chiNhanhBLL))
                 {
                     MessageBox.Show("Cập Nhật Chi Nhánh Thành Công");
-                    gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
-                    Load_Data_1();
+                    gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();                  
                     Clean();
                 }
                 else
@@ -190,15 +193,13 @@ namespace ProjectTaxi
             if (txt_Muc_M.Text != "" && txt_Thuong_M.Text != "")
             {
                 mucBLL.ID_MUC = txt_ID_Muc_M.Text;
-                mucBLL.MUC = float.Parse(txt_Muc_M.Text);
-                mucBLL.THUONG = float.Parse(txt_Thuong_M.Text);
+                mucBLL.MUC =txt_Muc_M.Text;
+                mucBLL.THUONG = txt_Thuong_M.Text;
                 if (mucDAL.InsertData(mucBLL))
                 {
                     MessageBox.Show("Thêm Mức Thành Công");
                     gridMuc.DataSource = mucDAL.SelectData();
                     Clean();
-
-
                 }
             }
             else
@@ -212,15 +213,13 @@ namespace ProjectTaxi
             if (txt_Muc_M.Text != "" && txt_Thuong_M.Text != "")
             {
                 mucBLL.ID_MUC = txt_ID_Muc_M.Text;
-                mucBLL.MUC = float.Parse(txt_Muc_M.Text);
-                mucBLL.THUONG = float.Parse(txt_Thuong_M.Text);
+                mucBLL.MUC = txt_Muc_M.Text;
+                mucBLL.THUONG = txt_Thuong_M.Text;
                 if (mucDAL.UpateData(mucBLL))
                 {
                     MessageBox.Show("Cập Nhâth Mức Thành Công");
                     gridMuc.DataSource = mucDAL.SelectData();
                     Clean();
-
-
                 }
             }
             else
@@ -264,7 +263,6 @@ namespace ProjectTaxi
                     {
                         MessageBox.Show("Xóa Chi Nhánh Thành Công");
                         gridControl_ChiNhanh.DataSource = chiNhanhDAL.SelectData();
-                        Load_Data_1();
                         Clean();
                     }
                 }       
@@ -282,8 +280,9 @@ namespace ProjectTaxi
                 LaiXeBLL.ID_LX = txtMaLaiXe.Text;
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
-                LaiXeBLL.ID_XE = cmbMaXe_LX.Text;
-                LaiXeBLL.ID_CN = cmbChiNhanh_LX.Text;
+                LaiXeBLL.ID_XE = cmbMaXe_LX.SelectedValue.ToString();
+                LaiXeBLL.ID_CN = cmbChiNhanh_LX.SelectedValue.ToString();
+
                 if (LaiXeDAL.InsertData(LaiXeBLL))
                 {
                     MessageBox.Show("Thêm Lái Xe Thành Công");
@@ -374,7 +373,7 @@ namespace ProjectTaxi
                     xeBLL.SO_XE = txt_SoXe_X.Text;
                     xeBLL.SO_LAI = txt_SoLai_X.Text;
                     xeBLL.MUC_DAT = txt_MucDat_X.Text;
-                    xeBLL.ID_MUC = txt_SoLai_X.Text;
+                    xeBLL.ID_MUC = cmb_MaMuc_X.SelectedValue.ToString();
                     if (XeDAL.InsertData(xeBLL))
                     {
                         MessageBox.Show("Thêm Xe Thành Công");
@@ -402,7 +401,7 @@ namespace ProjectTaxi
                 xeBLL.SO_XE = txt_SoXe_X.Text;
                 xeBLL.SO_LAI = txt_SoLai_X.Text;
                 xeBLL.MUC_DAT = txt_MucDat_X.Text;
-                xeBLL.ID_MUC = txt_SoLai_X.Text;
+                xeBLL.ID_MUC = cmb_MaMuc_X.Text;
                 if (XeDAL.UpateData(xeBLL))
                 {
                     MessageBox.Show("Câp Nhật Xe Thành Công");
@@ -459,7 +458,7 @@ namespace ProjectTaxi
             txt_SoXe_X.Text = row[2].ToString();
             txt_SoLai_X.Text = row[3].ToString();
             txt_MucDat_X.Text = row[4].ToString();
-            txt_MaMuc_X.Text = row[5].ToString();
+            cmb_MaMuc_X.Text = row[5].ToString();
         }
 
         private void txt_Cancal_Xe_Click(object sender, EventArgs e)

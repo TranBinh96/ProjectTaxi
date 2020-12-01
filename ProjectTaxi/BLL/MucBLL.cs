@@ -9,8 +9,8 @@ namespace ProjectTaxi.BLL
     class MucBLL
     {
         public string ID_MUC { get; set; }
-        public float MUC { get; set; }
-        public float THUONG { get; set; }
+        public string MUC { get; set; }
+        public string THUONG { get; set; }
 
 
     }
