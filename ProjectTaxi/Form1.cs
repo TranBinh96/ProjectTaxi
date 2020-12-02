@@ -75,23 +75,10 @@ namespace ProjectTaxi
             gridXe.DataSource = XeDAL.SelectData();
             gridDoanhThu.DataSource = doanhThuDAL.SelectData();
 
-            list_CN = chiNhanhDAL.GetChiNhanhBLLs();
-            cmbChiNhanh_LX.DataSource = list_CN;
-            cmbChiNhanh_LX.DisplayMember = "DIACHI";
-            cmbChiNhanh_LX.ValueMember = "ID_CN";
-            cmbChiNhanh_LX.SelectedIndex = -1;
+           
 
-            list_Xe = XeDAL.GetxeBLLs();
-            cmbMaXe_LX.DataSource = list_Xe;
-            cmbMaXe_LX.DisplayMember = "SO_XE";
-            cmbMaXe_LX.ValueMember = "ID_XE";
-            cmbMaXe_LX.SelectedIndex = -1;
 
-            list_Muc=mucDAL.GetMUCBLLs();
-            cmb_MaMuc_X.DataSource = list_Muc;
-            cmb_MaMuc_X.DisplayMember = "MUC";
-            cmb_MaMuc_X.ValueMember = "ID_MUC";
-            cmb_MaMuc_X.SelectedIndex = -1;
+            
 
         }
         #region Chi Nhanh
@@ -513,7 +500,7 @@ namespace ProjectTaxi
                     Clean();
                 }
 
-                else
+                else 
                 {
                     MessageBox.Show("Cập Nhật  Doanh Thu Thất Bại");
                 }
@@ -582,10 +569,34 @@ namespace ProjectTaxi
         }
 
 
-        private void cmbChiNhanh_LX_SelectedIndexChanged_1(object sender, EventArgs e)
+             private void cmbMaXe_LX_Click(object sender, EventArgs e)
         {
-            
-           
+
+            list_Xe = XeDAL.GetxeBLLs();
+            cmbMaXe_LX.DataSource = list_Xe;
+            cmbMaXe_LX.DisplayMember = "SO_XE";
+            cmbMaXe_LX.ValueMember = "ID_XE";
+            cmbMaXe_LX.SelectedIndex = -1;
+        }
+
+        private void cmb_MaMuc_X_Click(object sender, EventArgs e)
+        {
+            list_Muc = mucDAL.GetMUCBLLs();
+            cmb_MaMuc_X.DataSource = list_Muc;
+            cmb_MaMuc_X.DisplayMember = "MUC";
+            cmb_MaMuc_X.ValueMember = "ID_MUC";
+            cmb_MaMuc_X.SelectedIndex = -1;
+        }
+
+       
+
+        private void cmbChiNhanh_LX_Click(object sender, EventArgs e)
+        {
+            list_CN = chiNhanhDAL.GetChiNhanhBLLs();
+            cmbChiNhanh_LX.DataSource = list_CN;
+            cmbChiNhanh_LX.DisplayMember = "DIACHI";
+            cmbChiNhanh_LX.ValueMember = "ID_CN";
+            cmbChiNhanh_LX.SelectedIndex = -1;
         }
     }
 }
