@@ -12,19 +12,20 @@ namespace ProjectTaxi.DAL
 {
     class MUCDAL
     {
-        static SqlConnection connection = new SqlConnection(DBConnection.DbConn);
+         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
         public List<MucBLL> GetMUCBLLs()
         {
             List<MucBLL> list = new List<MucBLL>();
+            SqlConnection connection1 = new SqlConnection(DBConnection.DbConn);
 
             string queryString =
                     "select  * from  HAI_MUC";
 
             {
                 SqlCommand command = new SqlCommand(
-                    queryString, connection);
-                connection.Open();
+                    queryString, connection1);
+                connection1.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())

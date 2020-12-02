@@ -34,6 +34,7 @@ namespace ProjectTaxi
         {
             int barItemIndex = barSubItemNavigation.ItemLinks.IndexOf(e.Link);
             navBarControl.ActiveGroup = navBarControl.Groups[barItemIndex];
+
         }
 
         private void barButtonItemXe_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -63,6 +64,9 @@ namespace ProjectTaxi
         List<ChiNhanhBLL> list_CN = new List<ChiNhanhBLL>();
         List<XeBLL> list_Xe = new List<XeBLL>();
         List<MucBLL> list_Muc = new List<MucBLL>();
+        List<LaiXeBLL> list_LX = new List<LaiXeBLL>();
+
+     
 
         
 
@@ -128,9 +132,9 @@ namespace ProjectTaxi
             txt_MucDat_X.Text = "";
             txt_ID_Muc_M.Text = "";
             txtMaDoanhThu_DT.Text = "";
-            txt_LaiXe_DT.Text = "";
-            txt_Muc_DT.Text = "";
-            txt_ChiNhanh_DT.Text = "";
+            cmb_Laixe_DT.Text = "";
+            cmb_Muc_DT.Text = "";
+            cmb_ChiNhanh_DT.Text = "";
             txtTienNop_DT.Text = "";
             txtNgayNop_DT.Value = DateTime.Now;
             txt_TienThuong_DT.Text = "";
@@ -458,9 +462,9 @@ namespace ProjectTaxi
             if (txtMaDoanhThu_DT.Text != "")
             {
                 doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
-                doanhThuBLL.ID_LAI_XE = txt_LaiXe_DT.Text;
-                doanhThuBLL.ID_MUC = txt_Muc_DT.Text;
-                doanhThuBLL.ID_CHI_NHANH = txt_ChiNhanh_DT.Text;
+                doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString() ;
+                doanhThuBLL.ID_MUC = cmb_Muc_DT.SelectedValue.ToString() ;
+                doanhThuBLL.ID_CHI_NHANH = cmb_ChiNhanh_DT.SelectedValue.ToString();
                 doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
                 doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
@@ -487,9 +491,9 @@ namespace ProjectTaxi
             if (txtMaDoanhThu_DT.Text != "")
             {
                 doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
-                doanhThuBLL.ID_LAI_XE = txt_LaiXe_DT.Text;
-                doanhThuBLL.ID_MUC = txt_Muc_DT.Text;
-                doanhThuBLL.ID_CHI_NHANH = txt_ChiNhanh_DT.Text;
+                doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString();
+                doanhThuBLL.ID_MUC = cmb_Muc_DT.SelectedValue.ToString();
+                doanhThuBLL.ID_CHI_NHANH = cmb_ChiNhanh_DT.SelectedValue.ToString();
                 doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
                 doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
@@ -520,9 +524,9 @@ namespace ProjectTaxi
                 return;
 
             txtMaDoanhThu_DT.Text = row[0].ToString();
-            txt_LaiXe_DT.Text = row[1].ToString();
-            txt_Muc_DT.Text = row[2].ToString();
-            txt_ChiNhanh_DT.Text = row[3].ToString();
+            cmb_Laixe_DT.Text = row[1].ToString();
+            cmb_Muc_DT.Text = row[2].ToString();
+            cmb_ChiNhanh_DT.Text = row[3].ToString();
             txtTienNop_DT.Text = row[4].ToString();
             txtNgayNop_DT.Text = row[5].ToString();
             txt_TienThuong_DT.Text = row[6].ToString();
@@ -586,6 +590,7 @@ namespace ProjectTaxi
             cmb_MaMuc_X.DisplayMember = "MUC";
             cmb_MaMuc_X.ValueMember = "ID_MUC";
             cmb_MaMuc_X.SelectedIndex = -1;
+
         }
 
        
@@ -597,6 +602,38 @@ namespace ProjectTaxi
             cmbChiNhanh_LX.DisplayMember = "DIACHI";
             cmbChiNhanh_LX.ValueMember = "ID_CN";
             cmbChiNhanh_LX.SelectedIndex = -1;
+        }
+
+        private void cmb_Laixe_DT_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void cmb_Laixe_DT_Click(object sender, EventArgs e)
+        {
+            list_LX = LaiXeDAL.GetLaiXeBLLs();
+            cmb_Laixe_DT.DataSource = list_LX;
+            cmb_Laixe_DT.DisplayMember = "TEN_LX";
+            cmb_Laixe_DT.ValueMember = "ID_LX";
+            cmb_Laixe_DT.SelectedIndex = -1;
+        }
+
+        private void cmb_ChiNhanh_DT_Click(object sender, EventArgs e)
+        {
+            list_CN = chiNhanhDAL.GetChiNhanhBLLs();
+            cmb_ChiNhanh_DT.DataSource = list_CN;
+            cmb_ChiNhanh_DT.DisplayMember = "DIACHI";
+            cmb_ChiNhanh_DT.ValueMember = "ID_CN";
+            cmb_ChiNhanh_DT.SelectedIndex = -1;
+        }
+
+        private void cmb_Muc_DT_Click(object sender, EventArgs e)
+        {
+            list_Muc = mucDAL.GetMUCBLLs();
+            cmb_Muc_DT.DataSource = list_Muc;
+            cmb_Muc_DT.DisplayMember = "MUC";
+            cmb_Muc_DT.ValueMember = "ID_MUC";
+            cmb_Muc_DT.SelectedIndex = -1;
         }
     }
 }

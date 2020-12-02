@@ -31,8 +31,8 @@ namespace ProjectTaxi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            DevExpress.Utils.SuperToolTip superToolTip1 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem1 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -113,6 +113,7 @@ namespace ProjectTaxi
             this.customersLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbChiNhanh_LX = new System.Windows.Forms.ComboBox();
             this.cmbMaXe_LX = new System.Windows.Forms.ComboBox();
             this.btn_Delete_LX = new DevExpress.XtraEditors.SimpleButton();
             this.gridLaiXe = new DevExpress.XtraGrid.GridControl();
@@ -138,6 +139,7 @@ namespace ProjectTaxi
             this.layoutControlGroup12 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem17 = new DevExpress.XtraLayout.LayoutControlItem();
             this.ggd = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
             this.cmb_MaMuc_X = new System.Windows.Forms.ComboBox();
@@ -175,9 +177,6 @@ namespace ProjectTaxi
             this.gridDoanhThu = new DevExpress.XtraGrid.GridControl();
             this.gridViewDoanhThu = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.txtMaDoanhThu_DT = new DevExpress.XtraEditors.TextEdit();
-            this.txt_LaiXe_DT = new DevExpress.XtraEditors.TextEdit();
-            this.txt_Muc_DT = new DevExpress.XtraEditors.TextEdit();
-            this.txt_ChiNhanh_DT = new DevExpress.XtraEditors.TextEdit();
             this.txtTienNop_DT = new DevExpress.XtraEditors.TextEdit();
             this.txt_TienThuong_DT = new DevExpress.XtraEditors.TextEdit();
             this.btnSave_DT = new DevExpress.XtraEditors.SimpleButton();
@@ -187,9 +186,6 @@ namespace ProjectTaxi
             this.layoutControlGroup9 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem23 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem29 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem31 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem32 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem33 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -203,8 +199,12 @@ namespace ProjectTaxi
             this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmbChiNhanh_LX = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cmb_ChiNhanh_DT = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cmb_Laixe_DT = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.cmb_Muc_DT = new System.Windows.Forms.ComboBox();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
@@ -277,6 +277,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ggd)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
             this.navigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).BeginInit();
             this.layoutControl4.SuspendLayout();
@@ -309,18 +310,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.gridDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDoanhThu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDoanhThu_DT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LaiXe_DT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Muc_DT.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ChiNhanh_DT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienNop_DT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TienThuong_DT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).BeginInit();
@@ -334,7 +329,9 @@ namespace ProjectTaxi
             this.navigationPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -550,9 +547,9 @@ namespace ProjectTaxi
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarGroup3.ImageOptions.SvgImage")));
             this.navBarGroup3.Name = "navBarGroup3";
-            toolTipItem1.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            superToolTip1.Items.Add(toolTipItem1);
-            this.navBarGroup3.SuperTip = superToolTip1;
+            toolTipItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            superToolTip5.Items.Add(toolTipItem5);
+            this.navBarGroup3.SuperTip = superToolTip5;
             // 
             // navBarGroup4
             // 
@@ -1213,6 +1210,15 @@ namespace ProjectTaxi
             this.layoutControl3.TabIndex = 0;
             this.layoutControl3.Text = "layoutControl3";
             // 
+            // cmbChiNhanh_LX
+            // 
+            this.cmbChiNhanh_LX.FormattingEnabled = true;
+            this.cmbChiNhanh_LX.Location = new System.Drawing.Point(85, 93);
+            this.cmbChiNhanh_LX.Name = "cmbChiNhanh_LX";
+            this.cmbChiNhanh_LX.Size = new System.Drawing.Size(223, 21);
+            this.cmbChiNhanh_LX.TabIndex = 14;
+            this.cmbChiNhanh_LX.Click += new System.EventHandler(this.cmbChiNhanh_LX_Click);
+            // 
             // cmbMaXe_LX
             // 
             this.cmbMaXe_LX.FormattingEnabled = true;
@@ -1499,6 +1505,15 @@ namespace ProjectTaxi
             this.ggd.Text = "Số Đàm";
             this.ggd.TextLocation = DevExpress.Utils.Locations.Left;
             this.ggd.TextSize = new System.Drawing.Size(49, 13);
+            // 
+            // layoutControlItem18
+            // 
+            this.layoutControlItem18.Control = this.cmbChiNhanh_LX;
+            this.layoutControlItem18.Location = new System.Drawing.Point(0, 24);
+            this.layoutControlItem18.Name = "layoutControlItem18";
+            this.layoutControlItem18.Size = new System.Drawing.Size(288, 25);
+            this.layoutControlItem18.Text = "Chi Nhánh";
+            this.layoutControlItem18.TextSize = new System.Drawing.Size(49, 13);
             // 
             // navigationPage2
             // 
@@ -1854,13 +1869,13 @@ namespace ProjectTaxi
             // 
             // layoutControl5
             // 
+            this.layoutControl5.Controls.Add(this.cmb_Muc_DT);
+            this.layoutControl5.Controls.Add(this.cmb_Laixe_DT);
+            this.layoutControl5.Controls.Add(this.cmb_ChiNhanh_DT);
             this.layoutControl5.Controls.Add(this.txtNgayNop_DT);
             this.layoutControl5.Controls.Add(this.btn_Xoa_DT);
             this.layoutControl5.Controls.Add(this.gridDoanhThu);
             this.layoutControl5.Controls.Add(this.txtMaDoanhThu_DT);
-            this.layoutControl5.Controls.Add(this.txt_LaiXe_DT);
-            this.layoutControl5.Controls.Add(this.txt_Muc_DT);
-            this.layoutControl5.Controls.Add(this.txt_ChiNhanh_DT);
             this.layoutControl5.Controls.Add(this.txtTienNop_DT);
             this.layoutControl5.Controls.Add(this.txt_TienThuong_DT);
             this.layoutControl5.Controls.Add(this.btnSave_DT);
@@ -1878,7 +1893,7 @@ namespace ProjectTaxi
             // txtNgayNop_DT
             // 
             this.txtNgayNop_DT.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.txtNgayNop_DT.Location = new System.Drawing.Point(395, 93);
+            this.txtNgayNop_DT.Location = new System.Drawing.Point(395, 95);
             this.txtNgayNop_DT.Name = "txtNgayNop_DT";
             this.txtNgayNop_DT.Size = new System.Drawing.Size(206, 21);
             this.txtNgayNop_DT.TabIndex = 10;
@@ -1896,11 +1911,11 @@ namespace ProjectTaxi
             // 
             // gridDoanhThu
             // 
-            this.gridDoanhThu.Location = new System.Drawing.Point(24, 141);
+            this.gridDoanhThu.Location = new System.Drawing.Point(24, 143);
             this.gridDoanhThu.MainView = this.gridViewDoanhThu;
             this.gridDoanhThu.MenuManager = this.ribbonControl;
             this.gridDoanhThu.Name = "gridDoanhThu";
-            this.gridDoanhThu.Size = new System.Drawing.Size(577, 179);
+            this.gridDoanhThu.Size = new System.Drawing.Size(577, 177);
             this.gridDoanhThu.TabIndex = 8;
             this.gridDoanhThu.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewDoanhThu});
@@ -1919,33 +1934,9 @@ namespace ProjectTaxi
             this.txtMaDoanhThu_DT.StyleController = this.layoutControl5;
             this.txtMaDoanhThu_DT.TabIndex = 4;
             // 
-            // txt_LaiXe_DT
-            // 
-            this.txt_LaiXe_DT.Location = new System.Drawing.Point(394, 45);
-            this.txt_LaiXe_DT.Name = "txt_LaiXe_DT";
-            this.txt_LaiXe_DT.Size = new System.Drawing.Size(207, 20);
-            this.txt_LaiXe_DT.StyleController = this.layoutControl5;
-            this.txt_LaiXe_DT.TabIndex = 5;
-            // 
-            // txt_Muc_DT
-            // 
-            this.txt_Muc_DT.Location = new System.Drawing.Point(105, 69);
-            this.txt_Muc_DT.Name = "txt_Muc_DT";
-            this.txt_Muc_DT.Size = new System.Drawing.Size(204, 20);
-            this.txt_Muc_DT.StyleController = this.layoutControl5;
-            this.txt_Muc_DT.TabIndex = 6;
-            // 
-            // txt_ChiNhanh_DT
-            // 
-            this.txt_ChiNhanh_DT.Location = new System.Drawing.Point(394, 69);
-            this.txt_ChiNhanh_DT.Name = "txt_ChiNhanh_DT";
-            this.txt_ChiNhanh_DT.Size = new System.Drawing.Size(207, 20);
-            this.txt_ChiNhanh_DT.StyleController = this.layoutControl5;
-            this.txt_ChiNhanh_DT.TabIndex = 7;
-            // 
             // txtTienNop_DT
             // 
-            this.txtTienNop_DT.Location = new System.Drawing.Point(105, 93);
+            this.txtTienNop_DT.Location = new System.Drawing.Point(105, 95);
             this.txtTienNop_DT.Name = "txtTienNop_DT";
             this.txtTienNop_DT.Size = new System.Drawing.Size(205, 20);
             this.txtTienNop_DT.StyleController = this.layoutControl5;
@@ -1953,7 +1944,7 @@ namespace ProjectTaxi
             // 
             // txt_TienThuong_DT
             // 
-            this.txt_TienThuong_DT.Location = new System.Drawing.Point(105, 117);
+            this.txt_TienThuong_DT.Location = new System.Drawing.Point(105, 119);
             this.txt_TienThuong_DT.Name = "txt_TienThuong_DT";
             this.txt_TienThuong_DT.Size = new System.Drawing.Size(496, 20);
             this.txt_TienThuong_DT.StyleController = this.layoutControl5;
@@ -2010,9 +2001,6 @@ namespace ProjectTaxi
             this.layoutControlGroup9.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem23,
             this.layoutControlItem29,
-            this.layoutControlItem25,
-            this.layoutControlItem24,
-            this.layoutControlItem26,
             this.layoutControlItem31,
             this.layoutControlItem32,
             this.layoutControlItem33,
@@ -2022,7 +2010,10 @@ namespace ProjectTaxi
             this.emptySpaceItem12,
             this.layoutControlItem16,
             this.layoutControlItem28,
-            this.layoutControlItem27});
+            this.layoutControlItem27,
+            this.layoutControlItem24,
+            this.layoutControlItem26,
+            this.layoutControlItem25});
             this.layoutControlGroup9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup9.Name = "layoutControlGroup9";
             this.layoutControlGroup9.Size = new System.Drawing.Size(605, 351);
@@ -2035,7 +2026,7 @@ namespace ProjectTaxi
             this.layoutControlItem23.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem23.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem23.Name = "layoutControlItem23";
-            this.layoutControlItem23.Size = new System.Drawing.Size(289, 24);
+            this.layoutControlItem23.Size = new System.Drawing.Size(289, 25);
             this.layoutControlItem23.Text = "Mã Doanh Thu";
             this.layoutControlItem23.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem23.TextSize = new System.Drawing.Size(69, 13);
@@ -2045,55 +2036,19 @@ namespace ProjectTaxi
             this.layoutControlItem29.Control = this.txt_TienThuong_DT;
             this.layoutControlItem29.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem29.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem29.Location = new System.Drawing.Point(0, 72);
+            this.layoutControlItem29.Location = new System.Drawing.Point(0, 74);
             this.layoutControlItem29.Name = "layoutControlItem29";
             this.layoutControlItem29.Size = new System.Drawing.Size(581, 24);
             this.layoutControlItem29.Text = "Tiền Thường";
             this.layoutControlItem29.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem29.TextSize = new System.Drawing.Size(69, 13);
             // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.txt_Muc_DT;
-            this.layoutControlItem25.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem25.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(289, 24);
-            this.layoutControlItem25.Text = "Mã Mức";
-            this.layoutControlItem25.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // layoutControlItem24
-            // 
-            this.layoutControlItem24.Control = this.txt_LaiXe_DT;
-            this.layoutControlItem24.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem24.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem24.Location = new System.Drawing.Point(289, 0);
-            this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem24.Text = "Lái Xe";
-            this.layoutControlItem24.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // layoutControlItem26
-            // 
-            this.layoutControlItem26.Control = this.txt_ChiNhanh_DT;
-            this.layoutControlItem26.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem26.CustomizationFormText = "layoutControlItem4";
-            this.layoutControlItem26.Location = new System.Drawing.Point(289, 24);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(292, 24);
-            this.layoutControlItem26.Text = "Chi Nhánh";
-            this.layoutControlItem26.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(69, 13);
-            // 
             // layoutControlItem31
             // 
             this.layoutControlItem31.Control = this.gridDoanhThu;
-            this.layoutControlItem31.Location = new System.Drawing.Point(0, 96);
+            this.layoutControlItem31.Location = new System.Drawing.Point(0, 98);
             this.layoutControlItem31.Name = "layoutControlItem31";
-            this.layoutControlItem31.Size = new System.Drawing.Size(581, 183);
+            this.layoutControlItem31.Size = new System.Drawing.Size(581, 181);
             this.layoutControlItem31.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem31.TextVisible = false;
             // 
@@ -2193,7 +2148,7 @@ namespace ProjectTaxi
             // layoutControlItem28
             // 
             this.layoutControlItem28.Control = this.txtNgayNop_DT;
-            this.layoutControlItem28.Location = new System.Drawing.Point(290, 48);
+            this.layoutControlItem28.Location = new System.Drawing.Point(290, 50);
             this.layoutControlItem28.Name = "layoutControlItem28";
             this.layoutControlItem28.Size = new System.Drawing.Size(291, 24);
             this.layoutControlItem28.Text = "Ngày Nộp";
@@ -2204,7 +2159,7 @@ namespace ProjectTaxi
             this.layoutControlItem27.Control = this.txtTienNop_DT;
             this.layoutControlItem27.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
             this.layoutControlItem27.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem27.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem27.Location = new System.Drawing.Point(0, 50);
             this.layoutControlItem27.Name = "layoutControlItem27";
             this.layoutControlItem27.Size = new System.Drawing.Size(290, 24);
             this.layoutControlItem27.Text = "Tiền Nộp";
@@ -2234,23 +2189,60 @@ namespace ProjectTaxi
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
             // 
-            // cmbChiNhanh_LX
+            // cmb_ChiNhanh_DT
             // 
-            this.cmbChiNhanh_LX.FormattingEnabled = true;
-            this.cmbChiNhanh_LX.Location = new System.Drawing.Point(85, 93);
-            this.cmbChiNhanh_LX.Name = "cmbChiNhanh_LX";
-            this.cmbChiNhanh_LX.Size = new System.Drawing.Size(223, 21);
-            this.cmbChiNhanh_LX.TabIndex = 14;
-            this.cmbChiNhanh_LX.Click += new System.EventHandler(this.cmbChiNhanh_LX_Click);
+            this.cmb_ChiNhanh_DT.FormattingEnabled = true;
+            this.cmb_ChiNhanh_DT.Location = new System.Drawing.Point(394, 45);
+            this.cmb_ChiNhanh_DT.Name = "cmb_ChiNhanh_DT";
+            this.cmb_ChiNhanh_DT.Size = new System.Drawing.Size(207, 21);
+            this.cmb_ChiNhanh_DT.TabIndex = 11;
+            this.cmb_ChiNhanh_DT.Click += new System.EventHandler(this.cmb_ChiNhanh_DT_Click);
             // 
-            // layoutControlItem18
+            // layoutControlItem24
             // 
-            this.layoutControlItem18.Control = this.cmbChiNhanh_LX;
-            this.layoutControlItem18.Location = new System.Drawing.Point(0, 24);
-            this.layoutControlItem18.Name = "layoutControlItem18";
-            this.layoutControlItem18.Size = new System.Drawing.Size(288, 25);
-            this.layoutControlItem18.Text = "Chi Nhánh";
-            this.layoutControlItem18.TextSize = new System.Drawing.Size(49, 13);
+            this.layoutControlItem24.Control = this.cmb_ChiNhanh_DT;
+            this.layoutControlItem24.Location = new System.Drawing.Point(289, 0);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(292, 25);
+            this.layoutControlItem24.Text = "Chi Nhánh";
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // cmb_Laixe_DT
+            // 
+            this.cmb_Laixe_DT.FormattingEnabled = true;
+            this.cmb_Laixe_DT.Location = new System.Drawing.Point(395, 70);
+            this.cmb_Laixe_DT.Name = "cmb_Laixe_DT";
+            this.cmb_Laixe_DT.Size = new System.Drawing.Size(206, 21);
+            this.cmb_Laixe_DT.TabIndex = 12;
+            this.cmb_Laixe_DT.SelectedIndexChanged += new System.EventHandler(this.cmb_Laixe_DT_SelectedIndexChanged);
+            this.cmb_Laixe_DT.Click += new System.EventHandler(this.cmb_Laixe_DT_Click);
+            // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.cmb_Laixe_DT;
+            this.layoutControlItem26.Location = new System.Drawing.Point(290, 25);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(291, 25);
+            this.layoutControlItem26.Text = "Lái Xe";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // cmb_Muc_DT
+            // 
+            this.cmb_Muc_DT.FormattingEnabled = true;
+            this.cmb_Muc_DT.Location = new System.Drawing.Point(105, 70);
+            this.cmb_Muc_DT.Name = "cmb_Muc_DT";
+            this.cmb_Muc_DT.Size = new System.Drawing.Size(205, 21);
+            this.cmb_Muc_DT.TabIndex = 13;
+            this.cmb_Muc_DT.Click += new System.EventHandler(this.cmb_Muc_DT_Click);
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.cmb_Muc_DT;
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 25);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(290, 25);
+            this.layoutControlItem25.Text = "Mức";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(69, 13);
             // 
             // frmMenu
             // 
@@ -2340,6 +2332,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup12)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem17)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ggd)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
             this.navigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl4)).EndInit();
             this.layoutControl4.ResumeLayout(false);
@@ -2372,18 +2365,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.gridDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewDoanhThu)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaDoanhThu_DT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_LaiXe_DT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_Muc_DT.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_ChiNhanh_DT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTienNop_DT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TienThuong_DT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem23)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem29)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem31)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem32)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem33)).EndInit();
@@ -2397,7 +2384,9 @@ namespace ProjectTaxi
             this.navigationPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2518,9 +2507,6 @@ namespace ProjectTaxi
         private DevExpress.XtraGrid.GridControl gridDoanhThu;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewDoanhThu;
         private DevExpress.XtraEditors.TextEdit txtMaDoanhThu_DT;
-        private DevExpress.XtraEditors.TextEdit txt_LaiXe_DT;
-        private DevExpress.XtraEditors.TextEdit txt_Muc_DT;
-        private DevExpress.XtraEditors.TextEdit txt_ChiNhanh_DT;
         private DevExpress.XtraEditors.TextEdit txtTienNop_DT;
         private DevExpress.XtraEditors.TextEdit txt_TienThuong_DT;
         private DevExpress.XtraEditors.SimpleButton btnSave_DT;
@@ -2531,9 +2517,6 @@ namespace ProjectTaxi
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem23;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem27;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem29;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem31;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem32;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem33;
@@ -2576,5 +2559,11 @@ namespace ProjectTaxi
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem35;
         private System.Windows.Forms.ComboBox cmbChiNhanh_LX;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
+        private System.Windows.Forms.ComboBox cmb_Muc_DT;
+        private System.Windows.Forms.ComboBox cmb_Laixe_DT;
+        private System.Windows.Forms.ComboBox cmb_ChiNhanh_DT;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
     }
 }

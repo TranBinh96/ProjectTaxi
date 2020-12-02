@@ -13,7 +13,7 @@ namespace ProjectTaxi.DAL
     class XeDAL
     {
 
-        static SqlConnection connection = new SqlConnection(DBConnection.DbConn);
+        SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
         public List<XeBLL> GetxeBLLs()
         {
@@ -22,9 +22,10 @@ namespace ProjectTaxi.DAL
             string queryString =
                     "select  * from  HAI_XE;";
 
-            {
-                SqlCommand command = new SqlCommand( queryString, connection);
-                connection.Open();
+           try {
+                SqlConnection connection1 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand( queryString, connection1);
+                connection1.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -36,7 +37,12 @@ namespace ProjectTaxi.DAL
                         list.Add(XE);
                     }
                 }
+            }catch(Exception ex)
+            {
+                MessageBox.Show("Hệ Thống Lỗi");
             }
+           
+                
             return list;
         }
 

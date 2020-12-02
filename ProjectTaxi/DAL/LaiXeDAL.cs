@@ -13,6 +13,42 @@ namespace ProjectTaxi.DAL
     class LaiXeDAL
     {
         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
+
+        public List<LaiXeBLL> GetLaiXeBLLs()
+        {
+            List<LaiXeBLL> list = new List<LaiXeBLL>();
+
+            string queryString =
+                    "select  * from  HAI_LAIXE";
+
+
+            try
+            {
+                SqlConnection connection1 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection1);
+                connection1.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        LaiXeBLL laiXe = new LaiXeBLL();
+                        laiXe.ID_LX = reader[0].ToString();
+                        laiXe.TEN_LX = reader[1].ToString();
+                        list.Add(laiXe);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return list;
+        }
+
         #region Select Data
         public DataTable SelectData()
         {

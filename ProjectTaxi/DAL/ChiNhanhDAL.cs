@@ -22,11 +22,14 @@ namespace ProjectTaxi.DAL
 
             string queryString =
                     "select  * from  HAI_CHINHANH;";
-           
+
+
+            try
             {
+                SqlConnection connection1 = new SqlConnection(DBConnection.DbConn);
                 SqlCommand command = new SqlCommand(
-                    queryString, connection);
-                connection.Open();
+               queryString, connection1);
+                connection1.Open();
                 using (SqlDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
@@ -38,7 +41,13 @@ namespace ProjectTaxi.DAL
                         list.Add(chiNhanh);
                     }
                 }
+
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
             return list;
         }
