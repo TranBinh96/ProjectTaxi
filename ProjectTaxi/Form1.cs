@@ -389,7 +389,7 @@ namespace ProjectTaxi
         #region
         private void btnSave_LX_Click(object sender, EventArgs e)
         {
-            if (txtLoaiXe_X.Text != "")
+            if (txt_TenLX.Text != "")
             {
                 LaiXeBLL.ID_LX = Auto_ID_LX();
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
@@ -420,8 +420,8 @@ namespace ProjectTaxi
                 LaiXeBLL.ID_LX = txtMaLaiXe.Text;
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
-                LaiXeBLL.ID_XE = cmbMaXe_LX.Text;
-                LaiXeBLL.ID_CN = cmbChiNhanh_LX.Text;
+                LaiXeBLL.ID_XE = cmbMaXe_LX.SelectedValue.ToString();
+                LaiXeBLL.ID_CN = cmbChiNhanh_LX.SelectedValue.ToString();
                 if (LaiXeDAL.UpateData(LaiXeBLL))
                 {
                     MessageBox.Show("Cập Nhật Xe Thành Công");
