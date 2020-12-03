@@ -11,6 +11,7 @@ namespace ProjectTaxi.BLL
         public string ID_MUC { get; set; }
         public string MUC { get; set; }
         public string THUONG { get; set; }
+        public string ID_XE { get; set; }
 
 
     }

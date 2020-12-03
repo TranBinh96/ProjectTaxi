@@ -12,7 +12,5 @@ namespace ProjectTaxi.BLL
         public string LOAI_XE { get; set; }
         public string SO_XE { get; set; }
         public string SO_LAI { get; set; }
-        public string MUC_DAT { get; set; }
-        public string ID_MUC { get; set; }
     }
 }

@@ -66,9 +66,116 @@ namespace ProjectTaxi
         List<MucBLL> list_Muc = new List<MucBLL>();
         List<LaiXeBLL> list_LX = new List<LaiXeBLL>();
 
-     
 
-        
+        private String Auto_ID_CN()
+        {
+            ChiNhanhBLL chiNhanh = chiNhanhDAL.GetChiNhanh();
+            string m = chiNhanh.ID_CN; 
+            try
+            {
+                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                if (n <= 9)
+                    m = "CN" + n;
+                else
+                    if (n <= 99)
+                    m = "CN" + n;
+                else
+                    m = "CN" + n;
+            }
+            catch
+            {
+                m = "CN1";
+            }
+            return m;
+        }
+
+        private String Auto_ID_DT()
+        {
+            DoanhThuBLL doanh = doanhThuDAL.GetDoanhThu();
+            string m = doanh.MA_DOANH_THU;
+            try
+            {
+                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                if (n <= 9)
+                    m = "DT00" + n;
+                else
+                    if (n <= 99)
+                    m = "DT0" + n;
+                else
+                    m = "DT" + n;
+            }
+            catch
+            {
+                m = "DT001";
+            }
+            return m;
+        }
+
+        private String Auto_ID_XE()
+        {
+            XeBLL xe = XeDAL.GetXe();
+            string m = xe.ID_XE;
+            try
+            {
+                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                if (n <= 9)
+                    m = "X00" + n;
+                else
+                    if (n <= 99)
+                    m = "X0" + n;
+                else
+                    m = "X" + n;
+            }
+            catch
+            {
+                m = "X001";
+            }
+            return m;
+        }
+        private String Auto_ID_LX()
+        {
+            DoanhThuBLL doanh = doanhThuDAL.GetDoanhThu();
+            string m = doanh.MA_DOANH_THU;
+            try
+            {
+                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                if (n <= 9)
+                    m = "CN1000" + n;
+                else
+                    if (n <= 99)
+                    m = "CN100" + n;
+                else
+                    m = "CN10" + n;
+            }
+            catch
+            {
+                m = "CN10001";
+            }
+            return m;
+        }
+
+        private String Auto_ID_MUC()
+        {
+            MucBLL muc = mucDAL.GetDat();
+            string m = muc.ID_MUC;
+            try
+            {
+                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                if (n <= 9)
+                    m = "M00" + n;
+                else
+                    if (n <= 99)
+                    m = "M0" + n;
+                else
+                    m = "M" + n;
+            }
+            catch
+            {
+                m = "M001";
+            }
+            return m;
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -78,12 +185,6 @@ namespace ProjectTaxi
             gridLaiXe.DataSource = LaiXeDAL.SelectData();
             gridXe.DataSource = XeDAL.SelectData();
             gridDoanhThu.DataSource = doanhThuDAL.SelectData();
-
-           
-
-
-            
-
         }
         #region Chi Nhanh
 
@@ -91,7 +192,7 @@ namespace ProjectTaxi
         {
             if (txt_DiaChi_CN.Text != "" && txt_Name_CN.Text != "")
             {
-                chiNhanhBLL.ID_CN = txtID_CN.Text;
+                chiNhanhBLL.ID_CN = Auto_ID_CN();
                 chiNhanhBLL.TENCN = txt_Name_CN.Text;
                 chiNhanhBLL.DIACHI = txt_DiaChi_CN.Text;
                 if (chiNhanhDAL.InsertData(chiNhanhBLL))
@@ -129,7 +230,6 @@ namespace ProjectTaxi
             txtLoaiXe_X.Text = "";
             txt_SoXe_X.Text = "";
             txt_SoLai_X.Text = "";
-            txt_MucDat_X.Text = "";
             txt_ID_Muc_M.Text = "";
             txtMaDoanhThu_DT.Text = "";
             cmb_Laixe_DT.Text = "";
@@ -183,9 +283,10 @@ namespace ProjectTaxi
         {
             if (txt_Muc_M.Text != "" && txt_Thuong_M.Text != "")
             {
-                mucBLL.ID_MUC = txt_ID_Muc_M.Text;
-                mucBLL.MUC =txt_Muc_M.Text;
+                mucBLL.ID_MUC = Auto_ID_MUC();
+                mucBLL.MUC = txt_Muc_M.Text;
                 mucBLL.THUONG = txt_Thuong_M.Text;
+                mucBLL.ID_XE = cmbXe_M.SelectedValue.ToString();
                 if (mucDAL.InsertData(mucBLL))
                 {
                     MessageBox.Show("Thêm Mức Thành Công");
@@ -197,6 +298,7 @@ namespace ProjectTaxi
             {
                 MessageBox.Show("Thêm Mức Thất Bại");
             }
+
         }
 
         private void btn_Update_M_Click(object sender, EventArgs e)
@@ -206,9 +308,10 @@ namespace ProjectTaxi
                 mucBLL.ID_MUC = txt_ID_Muc_M.Text;
                 mucBLL.MUC = txt_Muc_M.Text;
                 mucBLL.THUONG = txt_Thuong_M.Text;
+                mucBLL.ID_XE = cmbXe_M.SelectedValue.ToString();
                 if (mucDAL.UpateData(mucBLL))
                 {
-                    MessageBox.Show("Cập Nhâth Mức Thành Công");
+                    MessageBox.Show("Cập Nhât Mức Thành Công");
                     gridMuc.DataSource = mucDAL.SelectData();
                     Clean();
                 }
@@ -268,7 +371,7 @@ namespace ProjectTaxi
         {
             if (txtMaLaiXe.Text != "")
             {
-                LaiXeBLL.ID_LX = txtMaLaiXe.Text;
+                LaiXeBLL.ID_LX = Auto_ID_LX();
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
                 LaiXeBLL.ID_XE = cmbMaXe_LX.SelectedValue.ToString();
@@ -357,14 +460,12 @@ namespace ProjectTaxi
 
         private void txtSave_X_Click(object sender, EventArgs e)
         {
-            if (txtMaXe_X.Text != "")
+            if (txtMaLaiXe.Text != "")
             {
-                    xeBLL.ID_XE = txtMaXe_X.Text;
+                    xeBLL.ID_XE = Auto_ID_XE();
                     xeBLL.LOAI_XE = txtLoaiXe_X.Text;
                     xeBLL.SO_XE = txt_SoXe_X.Text;
                     xeBLL.SO_LAI = txt_SoLai_X.Text;
-                    xeBLL.MUC_DAT = txt_MucDat_X.Text;
-                    xeBLL.ID_MUC = cmb_MaMuc_X.SelectedValue.ToString();
                     if (XeDAL.InsertData(xeBLL))
                     {
                         MessageBox.Show("Thêm Xe Thành Công");
@@ -391,8 +492,6 @@ namespace ProjectTaxi
                 xeBLL.LOAI_XE = txtLoaiXe_X.Text;
                 xeBLL.SO_XE = txt_SoXe_X.Text;
                 xeBLL.SO_LAI = txt_SoLai_X.Text;
-                xeBLL.MUC_DAT = txt_MucDat_X.Text;
-                xeBLL.ID_MUC = cmb_MaMuc_X.Text;
                 if (XeDAL.UpateData(xeBLL))
                 {
                     MessageBox.Show("Câp Nhật Xe Thành Công");
@@ -448,8 +547,6 @@ namespace ProjectTaxi
             txtLoaiXe_X.Text = row[1].ToString();
             txt_SoXe_X.Text = row[2].ToString();
             txt_SoLai_X.Text = row[3].ToString();
-            txt_MucDat_X.Text = row[4].ToString();
-            cmb_MaMuc_X.Text = row[5].ToString();
         }
 
         private void txt_Cancal_Xe_Click(object sender, EventArgs e)
@@ -459,9 +556,9 @@ namespace ProjectTaxi
 
         private void btnSave_DT_Click(object sender, EventArgs e)
         {
-            if (txtMaDoanhThu_DT.Text != "")
+            if (txtTienNop_DT.Text != "")
             {
-                doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
+                doanhThuBLL.MA_DOANH_THU = Auto_ID_DT();
                 doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString() ;
                 doanhThuBLL.ID_MUC = cmb_Muc_DT.SelectedValue.ToString() ;
                 doanhThuBLL.ID_CHI_NHANH = cmb_ChiNhanh_DT.SelectedValue.ToString();
@@ -583,15 +680,6 @@ namespace ProjectTaxi
             cmbMaXe_LX.SelectedIndex = -1;
         }
 
-        private void cmb_MaMuc_X_Click(object sender, EventArgs e)
-        {
-            list_Muc = mucDAL.GetMUCBLLs();
-            cmb_MaMuc_X.DataSource = list_Muc;
-            cmb_MaMuc_X.DisplayMember = "MUC";
-            cmb_MaMuc_X.ValueMember = "ID_MUC";
-            cmb_MaMuc_X.SelectedIndex = -1;
-
-        }
 
        
 
@@ -634,6 +722,35 @@ namespace ProjectTaxi
             cmb_Muc_DT.DisplayMember = "MUC";
             cmb_Muc_DT.ValueMember = "ID_MUC";
             cmb_Muc_DT.SelectedIndex = -1;
+        }
+
+        private void btnDelete_CN_Click(object sender, EventArgs e)
+        {
+            if (txt_Muc_M.Text != "" && txt_Thuong_M.Text != "")
+            {
+                mucBLL.ID_MUC = txt_ID_Muc_M.Text;
+                mucBLL.MUC = txt_Muc_M.Text;
+                mucBLL.THUONG = txt_Thuong_M.Text;
+                if (mucDAL.DeleteData(mucBLL))
+                {
+                    MessageBox.Show("Xóa Mức Thành Công");
+                    gridMuc.DataSource = mucDAL.SelectData();
+                    Clean();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Xóa Mức Thất Bại");
+            }
+        }
+
+        private void cmbXe_M_Click(object sender, EventArgs e)
+        {
+            list_Xe = XeDAL.GetxeBLLs();
+            cmbXe_M.DataSource = list_Xe;
+            cmbXe_M.DisplayMember = "LOAI_XE";
+            cmbXe_M.ValueMember = "ID_XE";
+            cmbXe_M.SelectedIndex = -1;
         }
     }
 }

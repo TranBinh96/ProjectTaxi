@@ -14,9 +14,41 @@ namespace ProjectTaxi.DAL
     {
         static SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+        public ChiNhanhBLL GetChiNhanh()
+        {
+            ChiNhanhBLL nhanhBLL = new ChiNhanhBLL();
+
+            string queryString =
+                    "SELECT * FROM HAI_CHINHANH WHERE ID_CN = (SELECT MAX(ID_CN) FROM HAI_CHINHANH)";
 
 
-        public  List<ChiNhanhBLL> GetChiNhanhBLLs()
+            try
+            {
+                SqlConnection connection2 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection2);
+                connection2.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        nhanhBLL.ID_CN = reader[0].ToString();
+                       
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return nhanhBLL;
+        }
+
+
+        public List<ChiNhanhBLL> GetChiNhanhBLLs()
         {
             List<ChiNhanhBLL> list = new List<ChiNhanhBLL>();
 

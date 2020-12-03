@@ -14,6 +14,41 @@ namespace ProjectTaxi.DAL
     {
         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+
+        public LaiXeBLL GetLaiXe()
+        {
+            LaiXeBLL laiXeBLL = new LaiXeBLL();
+
+            string queryString =
+                    "SELECT * FROM HAI_LAIXE WHERE ID_LAIXE = (SELECT MAX(ID_LAIXE) FROM HAI_LAIXE)";
+
+
+            try
+            {
+                SqlConnection connection2 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection2);
+                connection2.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        laiXeBLL.ID_LX = reader[0].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return laiXeBLL;
+        }
+
+
         public List<LaiXeBLL> GetLaiXeBLLs()
         {
             List<LaiXeBLL> list = new List<LaiXeBLL>();

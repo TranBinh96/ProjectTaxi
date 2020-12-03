@@ -14,6 +14,39 @@ namespace ProjectTaxi.DAL
     {
         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+        public DoanhThuBLL GetDoanhThu()
+        {
+            DoanhThuBLL doanhThu = new DoanhThuBLL();
+
+            string queryString =
+                    "SELECT * FROM HAI_DOANHTHU WHERE ID_DOANH_THU = (SELECT MAX(ID_DOANH_THU) FROM HAI_DOANHTHU)";
+
+
+            try
+            {
+                SqlConnection connection2 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection2);
+                connection2.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        doanhThu.MA_DOANH_THU = reader[0].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return doanhThu;
+        }
+
 
         #region Select Data
         public DataTable SelectData()

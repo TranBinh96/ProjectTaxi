@@ -15,6 +15,39 @@ namespace ProjectTaxi.DAL
 
         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+        public XeBLL GetXe()
+        {
+            XeBLL xe = new XeBLL();
+
+            string queryString =
+                    "SELECT * FROM HAI_XE WHERE ID_XE = (SELECT MAX(ID_XE) FROM HAI_XE)";
+            try
+            {
+                SqlConnection connection2 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection2);
+                connection2.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        xe.ID_XE = reader[0].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return xe;
+        }
+
+
+
         public List<XeBLL> GetxeBLLs()
         {
             List<XeBLL> list = new List<XeBLL>();
@@ -32,6 +65,7 @@ namespace ProjectTaxi.DAL
                     {
                         XeBLL XE = new XeBLL();
                         XE.ID_XE = reader[0].ToString();
+                        XE.LOAI_XE = reader[1].ToString();
                         XE.SO_XE = reader[2].ToString();
 
                         list.Add(XE);
@@ -40,8 +74,7 @@ namespace ProjectTaxi.DAL
             }catch(Exception ex)
             {
                 MessageBox.Show("Hệ Thống Lỗi");
-            }
-           
+            }          
                 
             return list;
         }
@@ -81,15 +114,13 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "INSERT INTO HAI_XE(ID_XE, LOAI_XE, SO_XE, SO_LAI, MUC_DAT, ID_MUC) VALUES (@ID_XE, @LOAI_XE, @SO_XE, @SO_LAI, @MUC_DAT, @ID_MUC)";
+                string sql = "INSERT INTO HAI_XE(ID_XE, LOAI_XE, SO_XE, SO_LAI, MUC_DAT, ID_MUC) VALUES (@ID_XE, @LOAI_XE, @SO_XE, @SO_LAI)";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_XE", Xe.ID_XE);
                 command.Parameters.AddWithValue("@LOAI_XE", Xe.LOAI_XE);
                 command.Parameters.AddWithValue("@SO_XE", Xe.SO_XE);
                 command.Parameters.AddWithValue("@SO_LAI", Xe.SO_LAI);
-                command.Parameters.AddWithValue("@MUC_DAT", Xe.MUC_DAT);
-                command.Parameters.AddWithValue("@ID_MUC", Xe.ID_MUC);
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -118,14 +149,12 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "UPDATE HAI_XE SET  LOAI_XE = @LOAI_XE,SO_XE=@SO_XE,MUC_DAT=@MUC_DAT,ID_MUC=@ID_MUC WHERE ID_XE=@ID_XE";
+                string sql = "UPDATE HAI_XE SET  LOAI_XE = @LOAI_XE,SO_XE=@SO_XE WHERE ID_XE=@ID_XE";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_XE", Xe.ID_XE);
                 command.Parameters.AddWithValue("@LOAI_XE", Xe.LOAI_XE);
                 command.Parameters.AddWithValue("@SO_XE", Xe.SO_XE);
-                command.Parameters.AddWithValue("@MUC_DAT", Xe.MUC_DAT);
-                command.Parameters.AddWithValue("@ID_MUC", Xe.ID_MUC);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

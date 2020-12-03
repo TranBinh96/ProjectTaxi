@@ -31,8 +31,8 @@ namespace ProjectTaxi
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
-            DevExpress.Utils.SuperToolTip superToolTip5 = new DevExpress.Utils.SuperToolTip();
-            DevExpress.Utils.ToolTipItem toolTipItem5 = new DevExpress.Utils.ToolTipItem();
+            DevExpress.Utils.SuperToolTip superToolTip2 = new DevExpress.Utils.SuperToolTip();
+            DevExpress.Utils.ToolTipItem toolTipItem2 = new DevExpress.Utils.ToolTipItem();
             this.tabbedView = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.skinRibbonGalleryBarItem = new DevExpress.XtraBars.SkinRibbonGalleryBarItem();
@@ -88,6 +88,7 @@ namespace ProjectTaxi
             this.employeesLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.customersNavigationPage = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmbXe_M = new System.Windows.Forms.ComboBox();
             this.btnDelete_CN = new DevExpress.XtraEditors.SimpleButton();
             this.gridMuc = new DevExpress.XtraGrid.GridControl();
             this.gridViewMuc = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -110,6 +111,7 @@ namespace ProjectTaxi
             this.emptySpaceItem5 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem6 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem40 = new DevExpress.XtraLayout.LayoutControlItem();
             this.customersLabelControl = new DevExpress.XtraEditors.LabelControl();
             this.navigationPage1 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl3 = new DevExpress.XtraLayout.LayoutControl();
@@ -142,7 +144,6 @@ namespace ProjectTaxi
             this.layoutControlItem18 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage2 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl4 = new DevExpress.XtraLayout.LayoutControl();
-            this.cmb_MaMuc_X = new System.Windows.Forms.ComboBox();
             this.btnDelete_X = new DevExpress.XtraEditors.SimpleButton();
             this.gridXe = new DevExpress.XtraGrid.GridControl();
             this.gridViewXe = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -150,7 +151,6 @@ namespace ProjectTaxi
             this.txtLoaiXe_X = new DevExpress.XtraEditors.TextEdit();
             this.txt_SoXe_X = new DevExpress.XtraEditors.TextEdit();
             this.txt_SoLai_X = new DevExpress.XtraEditors.TextEdit();
-            this.txt_MucDat_X = new DevExpress.XtraEditors.TextEdit();
             this.txtSave_X = new DevExpress.XtraEditors.SimpleButton();
             this.txtUpdate_X = new DevExpress.XtraEditors.SimpleButton();
             this.txt_Cancal_Xe = new DevExpress.XtraEditors.SimpleButton();
@@ -165,13 +165,14 @@ namespace ProjectTaxi
             this.layoutControlGroup10 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.dsfsdfs = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem37 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem39 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem38 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem36 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem35 = new DevExpress.XtraLayout.LayoutControlItem();
             this.txtDelete_X = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage3 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.layoutControl5 = new DevExpress.XtraLayout.LayoutControl();
+            this.cmb_Muc_DT = new System.Windows.Forms.ComboBox();
+            this.cmb_Laixe_DT = new System.Windows.Forms.ComboBox();
+            this.cmb_ChiNhanh_DT = new System.Windows.Forms.ComboBox();
             this.txtNgayNop_DT = new System.Windows.Forms.DateTimePicker();
             this.btn_Xoa_DT = new DevExpress.XtraEditors.SimpleButton();
             this.gridDoanhThu = new DevExpress.XtraGrid.GridControl();
@@ -196,15 +197,12 @@ namespace ProjectTaxi
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem28 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem27 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             this.navigationPage4 = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.cmb_ChiNhanh_DT = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem24 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmb_Laixe_DT = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem26 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.cmb_Muc_DT = new System.Windows.Forms.ComboBox();
-            this.layoutControlItem25 = new DevExpress.XtraLayout.LayoutControlItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.officeNavigationBar)).BeginInit();
@@ -254,6 +252,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).BeginInit();
             this.navigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).BeginInit();
             this.layoutControl3.SuspendLayout();
@@ -287,7 +286,6 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiXe_X.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoXe_X.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoLai_X.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MucDat_X.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).BeginInit();
@@ -299,10 +297,8 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsfsdfs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem35)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).BeginInit();
             this.navigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).BeginInit();
@@ -326,12 +322,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).BeginInit();
-            this.navigationPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).BeginInit();
+            this.navigationPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl
@@ -547,9 +543,9 @@ namespace ProjectTaxi
             this.navBarGroup3.Expanded = true;
             this.navBarGroup3.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("navBarGroup3.ImageOptions.SvgImage")));
             this.navBarGroup3.Name = "navBarGroup3";
-            toolTipItem5.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
-            superToolTip5.Items.Add(toolTipItem5);
-            this.navBarGroup3.SuperTip = superToolTip5;
+            toolTipItem2.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("resource.SvgImage")));
+            superToolTip2.Items.Add(toolTipItem2);
+            this.navBarGroup3.SuperTip = superToolTip2;
             // 
             // navBarGroup4
             // 
@@ -899,6 +895,7 @@ namespace ProjectTaxi
             // 
             // layoutControl2
             // 
+            this.layoutControl2.Controls.Add(this.cmbXe_M);
             this.layoutControl2.Controls.Add(this.btnDelete_CN);
             this.layoutControl2.Controls.Add(this.gridMuc);
             this.layoutControl2.Controls.Add(this.txt_ID_Muc_M);
@@ -916,6 +913,15 @@ namespace ProjectTaxi
             this.layoutControl2.TabIndex = 2;
             this.layoutControl2.Text = "layoutControl2";
             // 
+            // cmbXe_M
+            // 
+            this.cmbXe_M.FormattingEnabled = true;
+            this.cmbXe_M.Location = new System.Drawing.Point(363, 69);
+            this.cmbXe_M.Name = "cmbXe_M";
+            this.cmbXe_M.Size = new System.Drawing.Size(238, 21);
+            this.cmbXe_M.TabIndex = 9;
+            this.cmbXe_M.Click += new System.EventHandler(this.cmbXe_M_Click);
+            // 
             // btnDelete_CN
             // 
             this.btnDelete_CN.Location = new System.Drawing.Point(447, 324);
@@ -924,14 +930,15 @@ namespace ProjectTaxi
             this.btnDelete_CN.StyleController = this.layoutControl2;
             this.btnDelete_CN.TabIndex = 8;
             this.btnDelete_CN.Text = "Xóa";
+            this.btnDelete_CN.Click += new System.EventHandler(this.btnDelete_CN_Click);
             // 
             // gridMuc
             // 
-            this.gridMuc.Location = new System.Drawing.Point(24, 93);
+            this.gridMuc.Location = new System.Drawing.Point(24, 94);
             this.gridMuc.MainView = this.gridViewMuc;
             this.gridMuc.MenuManager = this.ribbonControl;
             this.gridMuc.Name = "gridMuc";
-            this.gridMuc.Size = new System.Drawing.Size(577, 227);
+            this.gridMuc.Size = new System.Drawing.Size(577, 226);
             this.gridMuc.TabIndex = 7;
             this.gridMuc.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewMuc});
@@ -962,7 +969,7 @@ namespace ProjectTaxi
             // 
             this.txt_Thuong_M.Location = new System.Drawing.Point(73, 69);
             this.txt_Thuong_M.Name = "txt_Thuong_M";
-            this.txt_Thuong_M.Size = new System.Drawing.Size(528, 20);
+            this.txt_Thuong_M.Size = new System.Drawing.Size(237, 20);
             this.txt_Thuong_M.StyleController = this.layoutControl2;
             this.txt_Thuong_M.TabIndex = 6;
             // 
@@ -1022,11 +1029,12 @@ namespace ProjectTaxi
             this.emptySpaceItem4,
             this.emptySpaceItem5,
             this.emptySpaceItem6,
-            this.layoutControlItem9});
+            this.layoutControlItem9,
+            this.layoutControlItem40});
             this.layoutControlGroup4.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup4.Name = "layoutControlGroup4";
             this.layoutControlGroup4.Size = new System.Drawing.Size(605, 351);
-            this.layoutControlGroup4.Text = "Mục";
+            this.layoutControlGroup4.Text = "Danh Sách Mức";
             // 
             // layoutControlItem8
             // 
@@ -1047,7 +1055,7 @@ namespace ProjectTaxi
             this.layoutControlItem10.CustomizationFormText = "layoutControlItem3";
             this.layoutControlItem10.Location = new System.Drawing.Point(0, 24);
             this.layoutControlItem10.Name = "layoutControlItem10";
-            this.layoutControlItem10.Size = new System.Drawing.Size(581, 24);
+            this.layoutControlItem10.Size = new System.Drawing.Size(290, 25);
             this.layoutControlItem10.Text = "Thưởng";
             this.layoutControlItem10.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem10.TextSize = new System.Drawing.Size(37, 13);
@@ -1067,9 +1075,9 @@ namespace ProjectTaxi
             // layoutControlItem11
             // 
             this.layoutControlItem11.Control = this.gridMuc;
-            this.layoutControlItem11.Location = new System.Drawing.Point(0, 48);
+            this.layoutControlItem11.Location = new System.Drawing.Point(0, 49);
             this.layoutControlItem11.Name = "layoutControlItem11";
-            this.layoutControlItem11.Size = new System.Drawing.Size(581, 231);
+            this.layoutControlItem11.Size = new System.Drawing.Size(581, 230);
             this.layoutControlItem11.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem11.TextVisible = false;
             // 
@@ -1165,6 +1173,15 @@ namespace ProjectTaxi
             this.layoutControlItem9.Size = new System.Drawing.Size(78, 27);
             this.layoutControlItem9.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem9.TextVisible = false;
+            // 
+            // layoutControlItem40
+            // 
+            this.layoutControlItem40.Control = this.cmbXe_M;
+            this.layoutControlItem40.Location = new System.Drawing.Point(290, 24);
+            this.layoutControlItem40.Name = "layoutControlItem40";
+            this.layoutControlItem40.Size = new System.Drawing.Size(291, 25);
+            this.layoutControlItem40.Text = "Xe";
+            this.layoutControlItem40.TextSize = new System.Drawing.Size(37, 13);
             // 
             // customersLabelControl
             // 
@@ -1523,14 +1540,12 @@ namespace ProjectTaxi
             // 
             // layoutControl4
             // 
-            this.layoutControl4.Controls.Add(this.cmb_MaMuc_X);
             this.layoutControl4.Controls.Add(this.btnDelete_X);
             this.layoutControl4.Controls.Add(this.gridXe);
             this.layoutControl4.Controls.Add(this.txtMaXe_X);
             this.layoutControl4.Controls.Add(this.txtLoaiXe_X);
             this.layoutControl4.Controls.Add(this.txt_SoXe_X);
             this.layoutControl4.Controls.Add(this.txt_SoLai_X);
-            this.layoutControl4.Controls.Add(this.txt_MucDat_X);
             this.layoutControl4.Controls.Add(this.txtSave_X);
             this.layoutControl4.Controls.Add(this.txtUpdate_X);
             this.layoutControl4.Controls.Add(this.txt_Cancal_Xe);
@@ -1542,16 +1557,6 @@ namespace ProjectTaxi
             this.layoutControl4.Size = new System.Drawing.Size(625, 371);
             this.layoutControl4.TabIndex = 0;
             this.layoutControl4.Text = "layoutControl4";
-            // 
-            // cmb_MaMuc_X
-            // 
-            this.cmb_MaMuc_X.FormattingEnabled = true;
-            this.cmb_MaMuc_X.Location = new System.Drawing.Point(367, 93);
-            this.cmb_MaMuc_X.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cmb_MaMuc_X.Name = "cmb_MaMuc_X";
-            this.cmb_MaMuc_X.Size = new System.Drawing.Size(234, 21);
-            this.cmb_MaMuc_X.TabIndex = 10;
-            this.cmb_MaMuc_X.Click += new System.EventHandler(this.cmb_MaMuc_X_Click);
             // 
             // btnDelete_X
             // 
@@ -1566,11 +1571,11 @@ namespace ProjectTaxi
             // 
             // gridXe
             // 
-            this.gridXe.Location = new System.Drawing.Point(12, 130);
+            this.gridXe.Location = new System.Drawing.Point(12, 105);
             this.gridXe.MainView = this.gridViewXe;
             this.gridXe.MenuManager = this.ribbonControl;
             this.gridXe.Name = "gridXe";
-            this.gridXe.Size = new System.Drawing.Size(601, 202);
+            this.gridXe.Size = new System.Drawing.Size(601, 227);
             this.gridXe.TabIndex = 8;
             this.gridXe.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewXe});
@@ -1583,43 +1588,35 @@ namespace ProjectTaxi
             // 
             // txtMaXe_X
             // 
-            this.txtMaXe_X.Location = new System.Drawing.Point(77, 45);
+            this.txtMaXe_X.Location = new System.Drawing.Point(70, 45);
             this.txtMaXe_X.Name = "txtMaXe_X";
-            this.txtMaXe_X.Size = new System.Drawing.Size(232, 20);
+            this.txtMaXe_X.Size = new System.Drawing.Size(239, 20);
             this.txtMaXe_X.StyleController = this.layoutControl4;
             this.txtMaXe_X.TabIndex = 4;
             // 
             // txtLoaiXe_X
             // 
-            this.txtLoaiXe_X.Location = new System.Drawing.Point(366, 45);
+            this.txtLoaiXe_X.Location = new System.Drawing.Point(359, 45);
             this.txtLoaiXe_X.Name = "txtLoaiXe_X";
-            this.txtLoaiXe_X.Size = new System.Drawing.Size(235, 20);
+            this.txtLoaiXe_X.Size = new System.Drawing.Size(242, 20);
             this.txtLoaiXe_X.StyleController = this.layoutControl4;
             this.txtLoaiXe_X.TabIndex = 5;
             // 
             // txt_SoXe_X
             // 
-            this.txt_SoXe_X.Location = new System.Drawing.Point(77, 69);
+            this.txt_SoXe_X.Location = new System.Drawing.Point(70, 69);
             this.txt_SoXe_X.Name = "txt_SoXe_X";
-            this.txt_SoXe_X.Size = new System.Drawing.Size(232, 20);
+            this.txt_SoXe_X.Size = new System.Drawing.Size(239, 20);
             this.txt_SoXe_X.StyleController = this.layoutControl4;
             this.txt_SoXe_X.TabIndex = 6;
             // 
             // txt_SoLai_X
             // 
-            this.txt_SoLai_X.Location = new System.Drawing.Point(366, 69);
+            this.txt_SoLai_X.Location = new System.Drawing.Point(359, 69);
             this.txt_SoLai_X.Name = "txt_SoLai_X";
-            this.txt_SoLai_X.Size = new System.Drawing.Size(235, 20);
+            this.txt_SoLai_X.Size = new System.Drawing.Size(242, 20);
             this.txt_SoLai_X.StyleController = this.layoutControl4;
             this.txt_SoLai_X.TabIndex = 7;
-            // 
-            // txt_MucDat_X
-            // 
-            this.txt_MucDat_X.Location = new System.Drawing.Point(77, 93);
-            this.txt_MucDat_X.Name = "txt_MucDat_X";
-            this.txt_MucDat_X.Size = new System.Drawing.Size(233, 20);
-            this.txt_MucDat_X.StyleController = this.layoutControl4;
-            this.txt_MucDat_X.TabIndex = 4;
             // 
             // txtSave_X
             // 
@@ -1678,9 +1675,9 @@ namespace ProjectTaxi
             // layoutControlItem41
             // 
             this.layoutControlItem41.Control = this.gridXe;
-            this.layoutControlItem41.Location = new System.Drawing.Point(0, 118);
+            this.layoutControlItem41.Location = new System.Drawing.Point(0, 93);
             this.layoutControlItem41.Name = "layoutControlItem41";
-            this.layoutControlItem41.Size = new System.Drawing.Size(605, 206);
+            this.layoutControlItem41.Size = new System.Drawing.Size(605, 231);
             this.layoutControlItem41.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem41.TextVisible = false;
             // 
@@ -1773,13 +1770,11 @@ namespace ProjectTaxi
             this.layoutControlGroup10.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.dsfsdfs,
             this.layoutControlItem37,
-            this.layoutControlItem39,
             this.layoutControlItem38,
-            this.layoutControlItem36,
-            this.layoutControlItem35});
+            this.layoutControlItem36});
             this.layoutControlGroup10.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup10.Name = "layoutControlGroup10";
-            this.layoutControlGroup10.Size = new System.Drawing.Size(605, 118);
+            this.layoutControlGroup10.Size = new System.Drawing.Size(605, 93);
             this.layoutControlGroup10.Text = "Xe";
             // 
             // dsfsdfs
@@ -1792,7 +1787,7 @@ namespace ProjectTaxi
             this.dsfsdfs.Size = new System.Drawing.Size(289, 24);
             this.dsfsdfs.Text = "Mã Xe";
             this.dsfsdfs.TextLocation = DevExpress.Utils.Locations.Left;
-            this.dsfsdfs.TextSize = new System.Drawing.Size(41, 13);
+            this.dsfsdfs.TextSize = new System.Drawing.Size(34, 13);
             // 
             // layoutControlItem37
             // 
@@ -1804,19 +1799,7 @@ namespace ProjectTaxi
             this.layoutControlItem37.Size = new System.Drawing.Size(289, 24);
             this.layoutControlItem37.Text = "Số Xe";
             this.layoutControlItem37.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem37.TextSize = new System.Drawing.Size(41, 13);
-            // 
-            // layoutControlItem39
-            // 
-            this.layoutControlItem39.Control = this.txt_MucDat_X;
-            this.layoutControlItem39.ControlAlignment = System.Drawing.ContentAlignment.TopLeft;
-            this.layoutControlItem39.CustomizationFormText = "layoutControlItem1";
-            this.layoutControlItem39.Location = new System.Drawing.Point(0, 48);
-            this.layoutControlItem39.Name = "layoutControlItem39";
-            this.layoutControlItem39.Size = new System.Drawing.Size(290, 25);
-            this.layoutControlItem39.Text = "Mức Đát";
-            this.layoutControlItem39.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem39.TextSize = new System.Drawing.Size(41, 13);
+            this.layoutControlItem37.TextSize = new System.Drawing.Size(34, 13);
             // 
             // layoutControlItem38
             // 
@@ -1828,7 +1811,7 @@ namespace ProjectTaxi
             this.layoutControlItem38.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem38.Text = "Số Lái";
             this.layoutControlItem38.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem38.TextSize = new System.Drawing.Size(41, 13);
+            this.layoutControlItem38.TextSize = new System.Drawing.Size(34, 13);
             // 
             // layoutControlItem36
             // 
@@ -1840,16 +1823,7 @@ namespace ProjectTaxi
             this.layoutControlItem36.Size = new System.Drawing.Size(292, 24);
             this.layoutControlItem36.Text = "Loại Xe";
             this.layoutControlItem36.TextLocation = DevExpress.Utils.Locations.Left;
-            this.layoutControlItem36.TextSize = new System.Drawing.Size(41, 13);
-            // 
-            // layoutControlItem35
-            // 
-            this.layoutControlItem35.Control = this.cmb_MaMuc_X;
-            this.layoutControlItem35.Location = new System.Drawing.Point(290, 48);
-            this.layoutControlItem35.Name = "layoutControlItem35";
-            this.layoutControlItem35.Size = new System.Drawing.Size(291, 25);
-            this.layoutControlItem35.Text = "Mức";
-            this.layoutControlItem35.TextSize = new System.Drawing.Size(41, 13);
+            this.layoutControlItem36.TextSize = new System.Drawing.Size(34, 13);
             // 
             // txtDelete_X
             // 
@@ -1889,6 +1863,34 @@ namespace ProjectTaxi
             this.layoutControl5.Size = new System.Drawing.Size(625, 371);
             this.layoutControl5.TabIndex = 0;
             this.layoutControl5.Text = "layoutControl5";
+            // 
+            // cmb_Muc_DT
+            // 
+            this.cmb_Muc_DT.FormattingEnabled = true;
+            this.cmb_Muc_DT.Location = new System.Drawing.Point(105, 70);
+            this.cmb_Muc_DT.Name = "cmb_Muc_DT";
+            this.cmb_Muc_DT.Size = new System.Drawing.Size(205, 21);
+            this.cmb_Muc_DT.TabIndex = 13;
+            this.cmb_Muc_DT.Click += new System.EventHandler(this.cmb_Muc_DT_Click);
+            // 
+            // cmb_Laixe_DT
+            // 
+            this.cmb_Laixe_DT.FormattingEnabled = true;
+            this.cmb_Laixe_DT.Location = new System.Drawing.Point(395, 70);
+            this.cmb_Laixe_DT.Name = "cmb_Laixe_DT";
+            this.cmb_Laixe_DT.Size = new System.Drawing.Size(206, 21);
+            this.cmb_Laixe_DT.TabIndex = 12;
+            this.cmb_Laixe_DT.SelectedIndexChanged += new System.EventHandler(this.cmb_Laixe_DT_SelectedIndexChanged);
+            this.cmb_Laixe_DT.Click += new System.EventHandler(this.cmb_Laixe_DT_Click);
+            // 
+            // cmb_ChiNhanh_DT
+            // 
+            this.cmb_ChiNhanh_DT.FormattingEnabled = true;
+            this.cmb_ChiNhanh_DT.Location = new System.Drawing.Point(394, 45);
+            this.cmb_ChiNhanh_DT.Name = "cmb_ChiNhanh_DT";
+            this.cmb_ChiNhanh_DT.Size = new System.Drawing.Size(207, 21);
+            this.cmb_ChiNhanh_DT.TabIndex = 11;
+            this.cmb_ChiNhanh_DT.Click += new System.EventHandler(this.cmb_ChiNhanh_DT_Click);
             // 
             // txtNgayNop_DT
             // 
@@ -2166,6 +2168,33 @@ namespace ProjectTaxi
             this.layoutControlItem27.TextLocation = DevExpress.Utils.Locations.Left;
             this.layoutControlItem27.TextSize = new System.Drawing.Size(69, 13);
             // 
+            // layoutControlItem24
+            // 
+            this.layoutControlItem24.Control = this.cmb_ChiNhanh_DT;
+            this.layoutControlItem24.Location = new System.Drawing.Point(289, 0);
+            this.layoutControlItem24.Name = "layoutControlItem24";
+            this.layoutControlItem24.Size = new System.Drawing.Size(292, 25);
+            this.layoutControlItem24.Text = "Chi Nhánh";
+            this.layoutControlItem24.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // layoutControlItem26
+            // 
+            this.layoutControlItem26.Control = this.cmb_Laixe_DT;
+            this.layoutControlItem26.Location = new System.Drawing.Point(290, 25);
+            this.layoutControlItem26.Name = "layoutControlItem26";
+            this.layoutControlItem26.Size = new System.Drawing.Size(291, 25);
+            this.layoutControlItem26.Text = "Lái Xe";
+            this.layoutControlItem26.TextSize = new System.Drawing.Size(69, 13);
+            // 
+            // layoutControlItem25
+            // 
+            this.layoutControlItem25.Control = this.cmb_Muc_DT;
+            this.layoutControlItem25.Location = new System.Drawing.Point(0, 25);
+            this.layoutControlItem25.Name = "layoutControlItem25";
+            this.layoutControlItem25.Size = new System.Drawing.Size(290, 25);
+            this.layoutControlItem25.Text = "Mức";
+            this.layoutControlItem25.TextSize = new System.Drawing.Size(69, 13);
+            // 
             // navigationPage4
             // 
             this.navigationPage4.Controls.Add(this.gridControl1);
@@ -2188,61 +2217,6 @@ namespace ProjectTaxi
             // 
             this.gridView1.GridControl = this.gridControl1;
             this.gridView1.Name = "gridView1";
-            // 
-            // cmb_ChiNhanh_DT
-            // 
-            this.cmb_ChiNhanh_DT.FormattingEnabled = true;
-            this.cmb_ChiNhanh_DT.Location = new System.Drawing.Point(394, 45);
-            this.cmb_ChiNhanh_DT.Name = "cmb_ChiNhanh_DT";
-            this.cmb_ChiNhanh_DT.Size = new System.Drawing.Size(207, 21);
-            this.cmb_ChiNhanh_DT.TabIndex = 11;
-            this.cmb_ChiNhanh_DT.Click += new System.EventHandler(this.cmb_ChiNhanh_DT_Click);
-            // 
-            // layoutControlItem24
-            // 
-            this.layoutControlItem24.Control = this.cmb_ChiNhanh_DT;
-            this.layoutControlItem24.Location = new System.Drawing.Point(289, 0);
-            this.layoutControlItem24.Name = "layoutControlItem24";
-            this.layoutControlItem24.Size = new System.Drawing.Size(292, 25);
-            this.layoutControlItem24.Text = "Chi Nhánh";
-            this.layoutControlItem24.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // cmb_Laixe_DT
-            // 
-            this.cmb_Laixe_DT.FormattingEnabled = true;
-            this.cmb_Laixe_DT.Location = new System.Drawing.Point(395, 70);
-            this.cmb_Laixe_DT.Name = "cmb_Laixe_DT";
-            this.cmb_Laixe_DT.Size = new System.Drawing.Size(206, 21);
-            this.cmb_Laixe_DT.TabIndex = 12;
-            this.cmb_Laixe_DT.SelectedIndexChanged += new System.EventHandler(this.cmb_Laixe_DT_SelectedIndexChanged);
-            this.cmb_Laixe_DT.Click += new System.EventHandler(this.cmb_Laixe_DT_Click);
-            // 
-            // layoutControlItem26
-            // 
-            this.layoutControlItem26.Control = this.cmb_Laixe_DT;
-            this.layoutControlItem26.Location = new System.Drawing.Point(290, 25);
-            this.layoutControlItem26.Name = "layoutControlItem26";
-            this.layoutControlItem26.Size = new System.Drawing.Size(291, 25);
-            this.layoutControlItem26.Text = "Lái Xe";
-            this.layoutControlItem26.TextSize = new System.Drawing.Size(69, 13);
-            // 
-            // cmb_Muc_DT
-            // 
-            this.cmb_Muc_DT.FormattingEnabled = true;
-            this.cmb_Muc_DT.Location = new System.Drawing.Point(105, 70);
-            this.cmb_Muc_DT.Name = "cmb_Muc_DT";
-            this.cmb_Muc_DT.Size = new System.Drawing.Size(205, 21);
-            this.cmb_Muc_DT.TabIndex = 13;
-            this.cmb_Muc_DT.Click += new System.EventHandler(this.cmb_Muc_DT_Click);
-            // 
-            // layoutControlItem25
-            // 
-            this.layoutControlItem25.Control = this.cmb_Muc_DT;
-            this.layoutControlItem25.Location = new System.Drawing.Point(0, 25);
-            this.layoutControlItem25.Name = "layoutControlItem25";
-            this.layoutControlItem25.Size = new System.Drawing.Size(290, 25);
-            this.layoutControlItem25.Text = "Mức";
-            this.layoutControlItem25.TextSize = new System.Drawing.Size(69, 13);
             // 
             // frmMenu
             // 
@@ -2309,6 +2283,7 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emptySpaceItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem40)).EndInit();
             this.navigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl3)).EndInit();
             this.layoutControl3.ResumeLayout(false);
@@ -2342,7 +2317,6 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.txtLoaiXe_X.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoXe_X.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_SoLai_X.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txt_MucDat_X.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem41)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem42)).EndInit();
@@ -2354,10 +2328,8 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dsfsdfs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem37)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem39)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem38)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem36)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem35)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDelete_X)).EndInit();
             this.navigationPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl5)).EndInit();
@@ -2381,12 +2353,12 @@ namespace ProjectTaxi
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem28)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem27)).EndInit();
-            this.navigationPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem24)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem26)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem25)).EndInit();
+            this.navigationPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2485,7 +2457,6 @@ namespace ProjectTaxi
         private DevExpress.XtraEditors.TextEdit txtLoaiXe_X;
         private DevExpress.XtraEditors.TextEdit txt_SoXe_X;
         private DevExpress.XtraEditors.TextEdit txt_SoLai_X;
-        private DevExpress.XtraEditors.TextEdit txt_MucDat_X;
         private DevExpress.XtraEditors.SimpleButton txtSave_X;
         private DevExpress.XtraEditors.SimpleButton txtUpdate_X;
         private DevExpress.XtraEditors.SimpleButton txt_Cancal_Xe;
@@ -2494,7 +2465,6 @@ namespace ProjectTaxi
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem36;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem37;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem38;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem39;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem41;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem42;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem43;
@@ -2555,8 +2525,6 @@ namespace ProjectTaxi
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ComboBox cmbMaXe_LX;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem17;
-        private System.Windows.Forms.ComboBox cmb_MaMuc_X;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem35;
         private System.Windows.Forms.ComboBox cmbChiNhanh_LX;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem18;
         private System.Windows.Forms.ComboBox cmb_Muc_DT;
@@ -2565,5 +2533,7 @@ namespace ProjectTaxi
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem24;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem26;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem25;
+        private System.Windows.Forms.ComboBox cmbXe_M;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem40;
     }
 }
