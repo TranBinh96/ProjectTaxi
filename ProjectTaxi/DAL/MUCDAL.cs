@@ -109,16 +109,22 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "insert into  HAI_MUC(ID_MUC, MUC, THUONG, ID_XE)  values (@ID_MUC,@MUC,@THUONG,@ID_XE)";
+                string sql = "insert into  HAI_MUC(ID_MUC, M1, THUONG_1, ID_XE, M2, THUONG_2, M3, THUONG_3)  values (@ID_MUC, @M1, @THUONG_1, @ID_XE, @M2, @THUONG_2, @M3, @THUONG_3)";
 
 
                 SqlCommand command = new SqlCommand(sql, connection);
 
 
                 command.Parameters.AddWithValue("@ID_MUC", MUC.ID_MUC);
-                command.Parameters.AddWithValue("@MUC", MUC.MUC);
-                command.Parameters.AddWithValue("@THUONG", MUC.THUONG);
+                command.Parameters.AddWithValue("@M1", MUC.MUC);
+                command.Parameters.AddWithValue("@THUONG_1", MUC.THUONG);
+                command.Parameters.AddWithValue("@M2", MUC.MUC_2);
                 command.Parameters.AddWithValue("@ID_XE", MUC.ID_XE);
+                command.Parameters.AddWithValue("@THUONG_2", MUC.THUONG_2);
+                command.Parameters.AddWithValue("@M3", MUC.MUC_3);
+                command.Parameters.AddWithValue("@THUONG_3", MUC.THUONG_3);
+
+
 
                 connection.Open();
                 command.ExecuteNonQuery();
@@ -147,13 +153,16 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "UPDATE HAI_MUC SET  MUC = @MUC,THUONG=@THUONG,ID_XE=@ID_XE WHERE ID_MUC=@ID_MUC";
-                SqlCommand command = new SqlCommand(sql, connection);
+                string sql = "UPDATE HAI_MUC SET  ID_MUC=@ID_MUC, M1=@M1, THUONG_1=@THUONG_1, ID_XE=@ID_XE, M2=@M2, THUONG_2=@THUONG_2, M3=@M3, THUONG_3=@THUONG_3 WHERE ID_MUC=@ID_MUC";
 
+                SqlCommand command = new SqlCommand(sql, connection);
                 command.Parameters.AddWithValue("@ID_MUC", MUC.ID_MUC);
-                command.Parameters.AddWithValue("@MUC", MUC.MUC);
-                command.Parameters.AddWithValue("@THUONG", MUC.THUONG);
-                command.Parameters.AddWithValue("@ID_XE", MUC.ID_XE);
+                command.Parameters.AddWithValue("@M1", MUC.MUC);
+                command.Parameters.AddWithValue("@THUONG_1", MUC.THUONG);
+                command.Parameters.AddWithValue("@M2", MUC.MUC_2);
+                command.Parameters.AddWithValue("@THUONG_2", MUC.THUONG_2);
+                command.Parameters.AddWithValue("@M3", MUC.MUC_3);
+                command.Parameters.AddWithValue("@THUONG_3", MUC.THUONG_3);
                 connection.Open();
                 command.ExecuteNonQuery();
             }

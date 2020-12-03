@@ -286,7 +286,15 @@ namespace ProjectTaxi
                 mucBLL.ID_MUC = Auto_ID_MUC();
                 mucBLL.MUC = txt_Muc_M.Text;
                 mucBLL.THUONG = txt_Thuong_M.Text;
+
+                mucBLL.MUC_2 = txt_Muc2_M.Text;
+                mucBLL.THUONG_2 = txt_Thuong2_M.Text;
+
+                mucBLL.MUC_3 = txt_Muc3_M.Text;
+                mucBLL.THUONG_3 = txt_Thuong3_M.Text;
+
                 mucBLL.ID_XE = cmbXe_M.SelectedValue.ToString();
+
                 if (mucDAL.InsertData(mucBLL))
                 {
                     MessageBox.Show("Thêm Mức Thành Công");
@@ -305,10 +313,15 @@ namespace ProjectTaxi
         {
             if (txt_Muc_M.Text != "" && txt_Thuong_M.Text != "")
             {
-                mucBLL.ID_MUC = txt_ID_Muc_M.Text;
+                mucBLL.ID_MUC = Auto_ID_MUC();
                 mucBLL.MUC = txt_Muc_M.Text;
                 mucBLL.THUONG = txt_Thuong_M.Text;
-                mucBLL.ID_XE = cmbXe_M.SelectedValue.ToString();
+
+                mucBLL.MUC_2 = txt_Muc2_M.Text;
+                mucBLL.THUONG_2 = txt_Thuong2_M.Text;
+
+                mucBLL.MUC_3 = txt_Muc3_M.Text;
+                mucBLL.THUONG_3 = txt_Thuong3_M.Text;
                 if (mucDAL.UpateData(mucBLL))
                 {
                     MessageBox.Show("Cập Nhât Mức Thành Công");
@@ -332,6 +345,13 @@ namespace ProjectTaxi
             txt_ID_Muc_M.Text = row[0].ToString();
             txt_Muc_M.Text = row[1].ToString();
             txt_Thuong_M.Text = row[2].ToString();
+            cmbXe_M.Text = row[3].ToString();
+
+            txt_Muc2_M.Text = row[4].ToString();
+            txt_Thuong2_M.Text = row[5].ToString();
+
+            txt_Muc3_M.Text = row[6].ToString();
+            txt_Thuong3_M.Text = row[7].ToString();
         }
 
         private void btnCancel_M_Click(object sender, EventArgs e)
@@ -369,7 +389,7 @@ namespace ProjectTaxi
         #region
         private void btnSave_LX_Click(object sender, EventArgs e)
         {
-            if (txtMaLaiXe.Text != "")
+            if (txtLoaiXe_X.Text != "")
             {
                 LaiXeBLL.ID_LX = Auto_ID_LX();
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
@@ -395,7 +415,7 @@ namespace ProjectTaxi
 
         private void btn_Update_LX_Click(object sender, EventArgs e)
         {
-            if (txtMaLaiXe.Text != "" && ggd.Text != "")
+            if (txtMaLaiXe.Text != "")
             {
                 LaiXeBLL.ID_LX = txtMaLaiXe.Text;
                 LaiXeBLL.TEN_LX = txt_TenLX.Text;
@@ -460,7 +480,7 @@ namespace ProjectTaxi
 
         private void txtSave_X_Click(object sender, EventArgs e)
         {
-            if (txtMaLaiXe.Text != "")
+            if (txtLoaiXe_X.Text != "")
             {
                     xeBLL.ID_XE = Auto_ID_XE();
                     xeBLL.LOAI_XE = txtLoaiXe_X.Text;

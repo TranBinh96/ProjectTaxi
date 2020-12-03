@@ -114,7 +114,7 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "INSERT INTO HAI_XE(ID_XE, LOAI_XE, SO_XE, SO_LAI, MUC_DAT, ID_MUC) VALUES (@ID_XE, @LOAI_XE, @SO_XE, @SO_LAI)";
+                string sql = "INSERT INTO HAI_XE(ID_XE, LOAI_XE, SO_XE, SO_LAI) VALUES (@ID_XE, @LOAI_XE, @SO_XE, @SO_LAI)";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_XE", Xe.ID_XE);
