@@ -81,13 +81,11 @@ namespace ProjectTaxi.DAL
         {
             try
             {
-                string sql = "INSERT INTO HAI_DOANHTHU(ID_DOANH_THU, ID_LAIXE, ID_MUC, ID_CN, TIEN_NOP, NGAY_NOP, TIEN_THUONG) VALUES (@ID_DOANH_THU, @ID_LAIXE, @ID_MUC, @ID_CN, @TIEN_NOP,@NGAY_NOP, @TIEN_THUONG) ";
+                string sql = "INSERT INTO HAI_DOANHTHU(ID_DOANH_THU, ID_LAIXE, TIEN_NOP, NGAY_NOP, TIEN_THUONG) VALUES (@ID_DOANH_THU, @ID_LAIXE, @TIEN_NOP,@NGAY_NOP, @TIEN_THUONG) ";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_DOANH_THU", doanhThu.MA_DOANH_THU);
                 command.Parameters.AddWithValue("@ID_LAIXE", doanhThu.ID_LAI_XE);
-                command.Parameters.AddWithValue("@ID_MUC", doanhThu.ID_MUC);
-                command.Parameters.AddWithValue("@ID_CN", doanhThu.ID_CHI_NHANH);
                 command.Parameters.AddWithValue("@TIEN_NOP", doanhThu.TIEN_NOP);
                 command.Parameters.AddWithValue("@NGAY_NOP", doanhThu.NGAY_NOP);
                 command.Parameters.AddWithValue("@TIEN_THUONG", doanhThu.TIEN_THUONG);
@@ -120,12 +118,10 @@ namespace ProjectTaxi.DAL
             try
             {
 
-                string sql = "UPDATE HAI_DOANHTHU SET  ID_LAIXE=@ID_LAIXE,ID_MUC=@ID_MUC,ID_CN=@ID_CN,TIEN_NOP=@TIEN_NOP,NGAY_NOP=@NGAY_NOP,TIEN_THUONG=@TIEN_THUONG WHERE ID_DOANH_THU=@ID_DOANH_THU";
+                string sql = "UPDATE HAI_DOANHTHU SET  ID_LAIXE=@ID_LAIXE,TIEN_NOP=@TIEN_NOP,NGAY_NOP=@NGAY_NOP,TIEN_THUONG=@TIEN_THUONG WHERE ID_DOANH_THU=@ID_DOANH_THU";
                 SqlCommand command = new SqlCommand(sql, connection);
 
                 command.Parameters.AddWithValue("@ID_LAIXE", doanhThu.ID_LAI_XE);
-                command.Parameters.AddWithValue("@ID_MUC", doanhThu.ID_MUC);
-                command.Parameters.AddWithValue("@ID_CN", doanhThu.ID_CHI_NHANH);
                 command.Parameters.AddWithValue("@TIEN_NOP", doanhThu.TIEN_NOP);
                 command.Parameters.AddWithValue("@ID_DOANH_THU", doanhThu.MA_DOANH_THU);
                 command.Parameters.AddWithValue("@NGAY_NOP", doanhThu.NGAY_NOP);

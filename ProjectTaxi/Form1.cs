@@ -60,11 +60,14 @@ namespace ProjectTaxi
         XeBLL xeBLL = new XeBLL();
         DoanhThuBLL doanhThuBLL = new DoanhThuBLL();
         DoanhThuDAL doanhThuDAL = new DoanhThuDAL();
+        ViewDoanhThuDAL ViewDoanhThu = new ViewDoanhThuDAL();
 
         List<ChiNhanhBLL> list_CN = new List<ChiNhanhBLL>();
         List<XeBLL> list_Xe = new List<XeBLL>();
         List<MucBLL> list_Muc = new List<MucBLL>();
         List<LaiXeBLL> list_LX = new List<LaiXeBLL>();
+
+
 
 
         private String Auto_ID_CN()
@@ -185,6 +188,7 @@ namespace ProjectTaxi
             gridLaiXe.DataSource = LaiXeDAL.SelectData();
             gridXe.DataSource = XeDAL.SelectData();
             gridDoanhThu.DataSource = doanhThuDAL.SelectData();
+            gridDoanhThuTungNgay.DataSource = ViewDoanhThu.SelectData();
         }
         #region Chi Nhanh
 
@@ -233,8 +237,6 @@ namespace ProjectTaxi
             txt_ID_Muc_M.Text = "";
             txtMaDoanhThu_DT.Text = "";
             cmb_Laixe_DT.Text = "";
-            cmb_Muc_DT.Text = "";
-            cmb_ChiNhanh_DT.Text = "";
             txtTienNop_DT.Text = "";
             txtNgayNop_DT.Value = DateTime.Now;
             txt_TienThuong_DT.Text = "";
@@ -580,8 +582,6 @@ namespace ProjectTaxi
             {
                 doanhThuBLL.MA_DOANH_THU = Auto_ID_DT();
                 doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString() ;
-                doanhThuBLL.ID_MUC = cmb_Muc_DT.SelectedValue.ToString() ;
-                doanhThuBLL.ID_CHI_NHANH = cmb_ChiNhanh_DT.SelectedValue.ToString();
                 doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
                 doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
@@ -607,10 +607,8 @@ namespace ProjectTaxi
         {
             if (txtMaDoanhThu_DT.Text != "")
             {
-                doanhThuBLL.MA_DOANH_THU = txtMaDoanhThu_DT.Text;
+                doanhThuBLL.MA_DOANH_THU = Auto_ID_DT();
                 doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString();
-                doanhThuBLL.ID_MUC = cmb_Muc_DT.SelectedValue.ToString();
-                doanhThuBLL.ID_CHI_NHANH = cmb_ChiNhanh_DT.SelectedValue.ToString();
                 doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
                 doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
@@ -642,11 +640,9 @@ namespace ProjectTaxi
 
             txtMaDoanhThu_DT.Text = row[0].ToString();
             cmb_Laixe_DT.Text = row[1].ToString();
-            cmb_Muc_DT.Text = row[2].ToString();
-            cmb_ChiNhanh_DT.Text = row[3].ToString();
-            txtTienNop_DT.Text = row[4].ToString();
-            txtNgayNop_DT.Text = row[5].ToString();
-            txt_TienThuong_DT.Text = row[6].ToString();
+            txtTienNop_DT.Text = row[2].ToString();
+            txtNgayNop_DT.Text = row[3].ToString();
+            txt_TienThuong_DT.Text = row[4].ToString();
         }
 
         private void btn_Xoa_DT_Click(object sender, EventArgs e)
@@ -726,23 +722,9 @@ namespace ProjectTaxi
             cmb_Laixe_DT.SelectedIndex = -1;
         }
 
-        private void cmb_ChiNhanh_DT_Click(object sender, EventArgs e)
-        {
-            list_CN = chiNhanhDAL.GetChiNhanhBLLs();
-            cmb_ChiNhanh_DT.DataSource = list_CN;
-            cmb_ChiNhanh_DT.DisplayMember = "DIACHI";
-            cmb_ChiNhanh_DT.ValueMember = "ID_CN";
-            cmb_ChiNhanh_DT.SelectedIndex = -1;
-        }
+      
 
-        private void cmb_Muc_DT_Click(object sender, EventArgs e)
-        {
-            list_Muc = mucDAL.GetMUCBLLs();
-            cmb_Muc_DT.DataSource = list_Muc;
-            cmb_Muc_DT.DisplayMember = "MUC";
-            cmb_Muc_DT.ValueMember = "ID_MUC";
-            cmb_Muc_DT.SelectedIndex = -1;
-        }
+      
 
         private void btnDelete_CN_Click(object sender, EventArgs e)
         {
