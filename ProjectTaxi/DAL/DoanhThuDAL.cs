@@ -47,6 +47,82 @@ namespace ProjectTaxi.DAL
             return doanhThu;
         }
 
+        public List<String> getLoaixes(string loaiXe)
+        {
+            List<String> list = new List<String>();
+            DoanhThuBLL doanhThuBLL = new DoanhThuBLL();
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT LOAI_XE FROM  HAI_XE WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE",loaiXe );
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string loaixe = reader[0].ToString();
+
+                        list.Add(loaixe);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return list;
+        }
+
+
+        public List<DoanhThuBLL> getDoanhThuBLLs()
+        {
+            List<DoanhThuBLL> list = new List<DoanhThuBLL>();
+
+            string queryString =
+                    "select  * from  HAI_DOANHTHU";
+
+
+            try
+            {
+                SqlConnection connection1 = new SqlConnection(DBConnection.DbConn);
+                SqlCommand command = new SqlCommand(
+               queryString, connection1);
+                connection1.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        DoanhThuBLL doanhThu = new DoanhThuBLL();
+                        doanhThu.MA_DOANH_THU = reader[0].ToString();
+                        doanhThu.ID_LAI_XE = reader[1].ToString();
+                        doanhThu.TIEN_NOP = reader[2].ToString();
+                        doanhThu.TIEN_THUONG= reader[4].ToString();
+
+                        list.Add(doanhThu);
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return list;
+        }
+
 
         #region Select Data
         public DataTable SelectData()

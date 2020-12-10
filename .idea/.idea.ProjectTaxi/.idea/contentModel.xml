@@ -12,9 +12,18 @@
         <e p="bin" t="ExcludeRecursive" />
         <e p="BLL" t="Include">
           <e p="ChiNhanhBLL.cs" t="Include" />
+          <e p="DoanhThuBLL.cs" t="Include" />
+          <e p="LaiXeBLL.cs" t="Include" />
+          <e p="MucBLL.cs" t="Include" />
+          <e p="XeBLL.cs" t="Include" />
         </e>
         <e p="DAL" t="Include">
           <e p="ChiNhanhDAL.cs" t="Include" />
+          <e p="DoanhThuDAL.cs" t="Include" />
+          <e p="LaiXeDAL.cs" t="Include" />
+          <e p="MUCDAL.cs" t="Include" />
+          <e p="ViewDoanhThuDAL.cs" t="Include" />
+          <e p="XeDAL.cs" t="Include" />
         </e>
         <e p="DBConnection.cs" t="Include" />
         <e p="Form1.cs" t="Include" />
@@ -36,6 +45,8 @@
           <e p="driver (1).png" t="Include" />
           <e p="driver.png" t="Include" />
           <e p="driver1.png" t="Include" />
+          <e p="salary (1).png" t="Include" />
+          <e p="salary.png" t="Include" />
           <e p="sedan-car-front.png" t="Include" />
         </e>
       </e>

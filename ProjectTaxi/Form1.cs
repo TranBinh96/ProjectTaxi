@@ -74,6 +74,7 @@ namespace ProjectTaxi
         {
             ChiNhanhBLL chiNhanh = chiNhanhDAL.GetChiNhanh();
             string m = chiNhanh.ID_CN; 
+
             try
             {
                 int n = Convert.ToInt32(m.Substring(2)) + 1;
@@ -137,8 +138,8 @@ namespace ProjectTaxi
         }
         private String Auto_ID_LX()
         {
-            DoanhThuBLL doanh = doanhThuDAL.GetDoanhThu();
-            string m = doanh.MA_DOANH_THU;
+            LaiXeBLL lx = LaiXeDAL.GetLaiXe();
+            string m = lx.ID_LX;
             try
             {
                 int n = Convert.ToInt32(m.Substring(2)) + 1;
@@ -154,7 +155,7 @@ namespace ProjectTaxi
             {
                 m = "CN10001";
             }
-            return m;
+            return m; 
         }
 
         private String Auto_ID_MUC()
@@ -398,10 +399,9 @@ namespace ProjectTaxi
                 LaiXeBLL.SO_DAM = txtSoDam.Text;
                 LaiXeBLL.ID_XE = cmbMaXe_LX.SelectedValue.ToString();
                 LaiXeBLL.ID_CN = cmbChiNhanh_LX.SelectedValue.ToString();
-
                 if (LaiXeDAL.InsertData(LaiXeBLL))
                 {
-                    MessageBox.Show("Thêm Lái Xe Thành Công");
+                    MessageBox.Show("Thêm Xe Thành Công");
                     gridLaiXe.DataSource = LaiXeDAL.SelectData();
                     Clean();
                 }
@@ -409,6 +409,7 @@ namespace ProjectTaxi
             else
             {
                 MessageBox.Show("Thêm Lái Xe Thất Bại");
+                
             }
         }
 
@@ -576,15 +577,42 @@ namespace ProjectTaxi
             Clean();
         }
 
+      
+
+        public float tienthuong()
+        {
+            float tienthuong = 0;
+            List<String> loaiXes = doanhThuDAL.getLoaixes(doanhThuBLL.ID_LAI_XE);
+
+            //lấy Dữ Liệu Về
+            List<DoanhThuBLL> doanhThuBLLs = doanhThuDAL.getDoanhThuBLLs();
+            foreach (String doanhThu in loaiXes)
+            {
+                MessageBox.Show(doanhThu);
+            }
+
+
+            return tienthuong;
+        }
+
+        
+
+
+
         private void btnSave_DT_Click(object sender, EventArgs e)
         {
+
             if (txtTienNop_DT.Text != "")
             {
                 doanhThuBLL.MA_DOANH_THU = Auto_ID_DT();
-                doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString() ;
-                doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
+                doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString();
+                doanhThuBLL.TIEN_NOP = txtTienNop_DT.Text;
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
-                doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
+                doanhThuBLL.TIEN_THUONG = txt_TienThuong_DT.Text;
+
+
+
+
                 if (doanhThuDAL.InsertData(doanhThuBLL))
                 {
                     MessageBox.Show("Thêm Doanh Thu Thành Công");
@@ -595,7 +623,7 @@ namespace ProjectTaxi
                 else
                 {
                     MessageBox.Show("Thêm  Doanh Thu Thất Bại");
-                } 
+                }
             }
             else
             {
@@ -609,9 +637,9 @@ namespace ProjectTaxi
             {
                 doanhThuBLL.MA_DOANH_THU = Auto_ID_DT();
                 doanhThuBLL.ID_LAI_XE = cmb_Laixe_DT.SelectedValue.ToString();
-                doanhThuBLL.TIEN_NOP = float.Parse(txtTienNop_DT.Text);
+                doanhThuBLL.TIEN_NOP = txtTienNop_DT.Text;
                 doanhThuBLL.NGAY_NOP = txtNgayNop_DT.Value;
-                doanhThuBLL.TIEN_THUONG = float.Parse(txt_TienThuong_DT.Text);
+                doanhThuBLL.TIEN_THUONG = txt_TienThuong_DT.Text;
                 if (doanhThuDAL.UpateData(doanhThuBLL))
                 {
                     MessageBox.Show("Cập Nhật Doanh Thu Thành Công");
@@ -676,7 +704,8 @@ namespace ProjectTaxi
 
         private void btnCancel_DT_Click(object sender, EventArgs e)
         {
-            Clean();
+            tienthuong();
+            //Clean();
         }
 
         private void barButtonItem2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

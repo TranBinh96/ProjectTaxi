@@ -10,8 +10,8 @@ namespace ProjectTaxi.BLL
     {
         public string MA_DOANH_THU { get; set; }
         public string ID_LAI_XE { get; set; }
-        public float TIEN_NOP { get; set; }
+        public string TIEN_NOP { get; set; }
         public DateTime NGAY_NOP { get; set; }
-        public float TIEN_THUONG { get; set; }
+        public string TIEN_THUONG { get; set; }
     }
 }

@@ -4,11 +4,29 @@
     <projectFile>ProjectTaxi/ProjectTaxi.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6cf667d4-7c67-479a-811e-dbec1c942a52" name="Default Changelist" comment="" />
+    <list default="true" id="6cf667d4-7c67-479a-811e-dbec1c942a52" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.vs/ProjectTaxi/v16/.suo" beforeDir="false" afterPath="$PROJECT_DIR$/.vs/ProjectTaxi/v16/.suo" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/BLL/DoanhThuBLL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/BLL/DoanhThuBLL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/DAL/DoanhThuDAL.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/DAL/DoanhThuDAL.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/Form1.Designer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/Form1.Designer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/Form1.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/Form1.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/Form1.resx" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/Form1.resx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/bin/Debug/ProjectTaxi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/bin/Debug/ProjectTaxi.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/bin/Debug/ProjectTaxi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/bin/Debug/ProjectTaxi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/DesignTimeResolveAssemblyReferences.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/DesignTimeResolveAssemblyReferences.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.csproj.GenerateResource.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.csproj.GenerateResource.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.csprojAssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.csprojAssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.frmMenu.resources" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.frmMenu.resources" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectTaxi/obj/Debug/ProjectTaxi.pdb" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1kzdx2lGsAmEi2ZbT2nBow2W2Qy" />
   <component name="ProjectViewState">
@@ -50,6 +68,7 @@
       <updated>1606707602094</updated>
       <workItem from="1606707615735" duration="123000" />
       <workItem from="1606707816276" duration="652000" />
+      <workItem from="1607417551652" duration="78000" />
     </task>
     <servers />
   </component>
