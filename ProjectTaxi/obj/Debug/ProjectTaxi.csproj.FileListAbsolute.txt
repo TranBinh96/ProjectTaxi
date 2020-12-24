@@ -91,7 +91,6 @@ C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\de\DevExpress.Office.v20
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\es\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ja\DevExpress.Office.v20.2.Core.resources.dll
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ru\DevExpress.Office.v20.2.Core.resources.dll
-C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.csprojAssemblyReference.cache
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.Properties.Resources.resources
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.csproj.GenerateResource.cache
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.exe.licenses
@@ -114,3 +113,4 @@ C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\de\DevExpress.XtraSchedu
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\es\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ja\DevExpress.XtraScheduler.v20.2.Core.resources.dll
 C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\bin\Debug\ru\DevExpress.XtraScheduler.v20.2.Core.resources.dll
+C:\Users\Binh\Desktop\ProjectTaxi\ProjectTaxi\obj\Debug\ProjectTaxi.csprojAssemblyReference.cache

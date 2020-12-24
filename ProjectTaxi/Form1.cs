@@ -142,7 +142,7 @@ namespace ProjectTaxi
             string m = lx.ID_LX;
             try
             {
-                int n = Convert.ToInt32(m.Substring(2)) + 1;
+                int n = Convert.ToInt32(m.Substring(6)) + 1;
                 if (n <= 9)
                     m = "CN1000" + n;
                 else
@@ -582,14 +582,15 @@ namespace ProjectTaxi
         public float tienthuong()
         {
             float tienthuong = 0;
-            List<String> loaiXes = doanhThuDAL.getLoaixes(doanhThuBLL.ID_LAI_XE);
+            string laixe = cmb_Laixe_DT.SelectedValue.ToString(); 
+
+
+            MucBLL  muc = doanhThuDAL.getMuc1("CN10001");
 
             //lấy Dữ Liệu Về
-            List<DoanhThuBLL> doanhThuBLLs = doanhThuDAL.getDoanhThuBLLs();
-            foreach (String doanhThu in loaiXes)
-            {
-                MessageBox.Show(doanhThu);
-            }
+          
+                MessageBox.Show( muc.MUC);
+            
 
 
             return tienthuong;

@@ -14,6 +14,8 @@ namespace ProjectTaxi.DAL
     {
         SqlConnection connection = new SqlConnection(DBConnection.DbConn);
 
+        
+
         public DoanhThuBLL GetDoanhThu()
         {
             DoanhThuBLL doanhThu = new DoanhThuBLL();
@@ -47,14 +49,15 @@ namespace ProjectTaxi.DAL
             return doanhThu;
         }
 
-        public List<String> getLoaixes(string loaiXe)
+        #region Lays Xe
+
+        public String getLoaixes(string loaiXe)
         {
-            List<String> list = new List<String>();
-            DoanhThuBLL doanhThuBLL = new DoanhThuBLL();
+            String loaixe = "" ;
             DataTable table = new DataTable();
             string sql =
                     "SELECT LOAI_XE FROM  HAI_XE WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
-
+            
             try
             {
                 SqlCommand command = new SqlCommand(sql, connection);
@@ -68,9 +71,84 @@ namespace ProjectTaxi.DAL
                 {
                     while (reader.Read())
                     {
-                        string loaixe = reader[0].ToString();
+                        loaixe = reader[0].ToString();
+                        
+                    }
+                }
 
-                        list.Add(loaixe);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return loaixe;
+
+        }
+
+        #endregion
+        #region Lay M1
+
+        public MucBLL getMuc1(string loaiXe)
+        {
+            string muc = "";
+
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT M1 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                          muc  = reader[1].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+
+            return muc ;
+        }
+
+        #endregion
+        #region Lay M2
+
+        public String getMuc2(string loaiXe)
+        {
+            string muc2 = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT M2 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                         muc2 = reader[4].ToString();
+               
                     }
                 }
 
@@ -81,8 +159,210 @@ namespace ProjectTaxi.DAL
             }
 
 
-            return list;
+            return muc2;
         }
+
+        #endregion
+        #region Lay M3
+
+        public String getMuc3(string loaiXe)
+        {
+            string muc = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT M3 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                         muc = reader[6].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return muc;
+        }
+
+        #endregion
+
+
+        #region Lay Thuong 1
+
+        public String  getThuong1(string loaiXe)
+        {
+            String thuong1 = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT THUONG_1 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE ) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                         thuong1 = reader[2].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return thuong1;
+        }
+
+        #endregion
+
+        #region Lay Thuong 2
+
+        public String getThuong2(string loaiXe)
+        {
+            String thuong1 = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT THUONG_2 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE ) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        thuong1 = reader[5].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return thuong1;
+        }
+
+        #endregion
+
+        #region Lay Thuong 3
+
+        public String getThuong3(string loaiXe)
+        {
+            String thuong1 = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT THUONG_3 FROM  HAI_MUC WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE ) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        thuong1 = reader[0].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return thuong1;
+        }
+
+        #endregion
+
+
+        #region Lay So Lai
+
+        public String getSoLai(string loaiXe)
+        {
+            String thuong1 = "";
+            DataTable table = new DataTable();
+            string sql =
+                    "SELECT SO_LAI FROM  HAI_XE WHERE  ID_XE = (SELECT  ID_XE FROM  HAI_LAIXE WHERE ID_LAIXE=@IDlAIXE) ";
+
+            try
+            {
+                SqlCommand command = new SqlCommand(sql, connection);
+                command.Parameters.AddWithValue("@IDlAIXE", loaiXe);
+                SqlDataAdapter adapter = new SqlDataAdapter(command);
+                connection.Open();
+                adapter.Fill(table);
+
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        thuong1 = reader[7].ToString();
+
+                    }
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+
+            return thuong1;
+        }
+
+        #endregion
+
+
+
+
 
 
         public List<DoanhThuBLL> getDoanhThuBLLs()
